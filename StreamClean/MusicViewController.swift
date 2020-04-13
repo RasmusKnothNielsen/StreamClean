@@ -1,53 +1,54 @@
 //
-//  ViewController.swift
+//  MusicViewController.swift
 //  StreamClean
 //
-//  Created by Rasmus Nielsen on 09/04/2020.
+//  Created by Rasmus Nielsen on 13/04/2020.
 //  Copyright © 2020 Rasmus Nielsen. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    @IBOutlet weak var picker: UIPickerView!
+class MusicViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
+    @IBOutlet weak var musicServicePicker: UIPickerView!
     
     @IBOutlet weak var hoursField: UITextField!
     
     @IBOutlet weak var minutesField: UITextField!
     
     @IBOutlet weak var resultField: UITextView!
-
-    var calculator = Calculator.calculator
     
     var pickerData: [String] = [String]()
-
     
+    var calculator = Calculator.calculator
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Connect data
-        self.picker.delegate = self
-        self.picker.dataSource = self
-
+        // Connect the data
+        self.musicServicePicker.delegate = self
+        self.musicServicePicker.dataSource = self
         
-        // Populate the picker
-        pickerData = ["Netflix", "HBO", "Amazon Prime", "Hulu", "DR TV", "Other"]
+        pickerData = ["Spotify", "Tidal", "Apple Music", "Youtube Music"]
+        
     }
     
+
     @IBAction func addButtonPressed(_ sender: UIButton) {
         print("Add button pressed")
         if (hoursField!.text == "" && minutesField.text == "") {
             print("user did not input anything")
         }
         else {
-            print("\(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(hoursField.text!) hours and \(minutesField.text!) minutes!")
-            resultField.text = resultField.text + "- \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(hoursField.text!) hours and \(minutesField.text!) minutes!\n"
-        
+            print("\(pickerData[musicServicePicker.selectedRow(inComponent: 0)]) chosen for \(hoursField.text!) hours and \(minutesField.text!) minutes!")
+            resultField.text = resultField.text + "- \(pickerData[musicServicePicker.selectedRow(inComponent: 0)]) chosen for \(hoursField.text!) hours and \(minutesField.text!) minutes!\n"
+
+            
             // Convert user input to integers, and sum up minutes before adding it to calculator.
             let hours = (Int(hoursField.text!) ?? 0) * 60   // Using minutes
             let minutes = Int(minutesField.text!) ?? 0
-            calculator.addVideo(usage: hours + minutes)
+            calculator.addMusic(usage: hours + minutes)
             
             // Reset fields so they are ready for more input
             hoursField.text = ""
@@ -55,11 +56,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    
-        func nextButtonPressed(_ sender: UIBarButtonItem) {
-        //performSegue(withIdentifier: ", sender: self)
-    }
-        
     // Number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -75,5 +71,5 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return pickerData[row]
     }
     
-
+    
 }
