@@ -26,7 +26,7 @@ class Calculator {
     // Weights for determining 1 hours worth of stream in kilometers driven
     // in a newer diesel car.
     // OBS: For now it's just placeholder numbers, will be fixed later
-    var videoWeight = 100
+    var videoWeight = 20
     var musicWeight = 10
     var generalWeight = 5
     
@@ -45,7 +45,7 @@ class Calculator {
     //}
     
     func getSum() -> Int {
-        let sum = (videoStreamingTime * videoWeight) + (musicStreamingTime * musicWeight)
+        let sum = ((videoStreamingTime / 60) * videoWeight) + ((musicStreamingTime / 60) * musicWeight)
         return sum
     }
     

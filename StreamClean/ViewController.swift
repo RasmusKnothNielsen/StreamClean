@@ -36,13 +36,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        print("Add button pressed")
         if (hoursField!.text == "" && minutesField.text == "") {
             print("user did not input anything")
         }
         else {
-            print("\(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(hoursField.text!) hours and \(minutesField.text!) minutes!")
-            resultField.text = resultField.text + "- \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(hoursField.text!) hours and \(minutesField.text!) minutes!\n"
+            // Check if the user did not write any hours
+            if(hoursField.text == "") {
+                resultField.text = resultField.text + "✓ \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(minutesField.text!) minutes!\n"
+            }
+            // Check if the user did not write any minutes
+            else if (minutesField.text == "") {
+                resultField.text = resultField.text + "✓ \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(hoursField.text!) hours!\n"
+            }
+            // Else add the following to the resultField for the user to see
+            else {
+                resultField.text = resultField.text + "✓ \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(hoursField.text!) hours and \(minutesField.text!) minutes!\n"
+            }
         
             // Convert user input to integers, and sum up minutes before adding it to calculator.
             let hours = (Int(hoursField.text!) ?? 0) * 60   // Using minutes
