@@ -9,3 +9,9 @@
 
 
 - Find out if it is possible to get the data directly from Screen Time
+
+- Implement the logic to calculate the milage used when streaming
+
+- Finding or making visuals for the result page
+
+- Icon design
