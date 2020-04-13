@@ -1,7 +1,7 @@
 #TODO list
 
 - Make new page to display other streaming choices, such as
-  - Music streaming
+  - Music streaming ✓
   - General internet usage (Facebook etc.)
 
 - Find a way to make it easy for the user to input the number of hours and minutes. 
@@ -11,9 +11,9 @@
 
 - Add Firebase Functionality for storing previous user inputs
 
-- Find out if it is possible to get the data directly from Screen Time
+- Find out if it is possible to get the data directly from Screen Time (It is not!)
 
-- Implement the logic to calculate the milage used when streaming
+- Implement the logic to calculate the milage used when streaming ✓
 
 - Finding or making visuals for the result page
 
