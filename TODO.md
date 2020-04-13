@@ -7,6 +7,9 @@
 - Find a way to make it easy for the user to input the number of hours and minutes. 
   Is it necessary to get the user to pick single minutes, like 1 hour and 12 minutes? Maybe allow either 15 min/ 30 min  intervals.
 
+- Add User signup / Sign in with apple, email, facebook and so on
+
+- Add Firebase Functionality for storing previous user inputs
 
 - Find out if it is possible to get the data directly from Screen Time
 
