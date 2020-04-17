@@ -13,6 +13,8 @@
 		3A656507243F2BE600E8C607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A656505243F2BE600E8C607 /* Main.storyboard */; };
 		3A656509243F2BE600E8C607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A656508243F2BE600E8C607 /* Assets.xcassets */; };
 		3A65650C243F2BE600E8C607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A65650A243F2BE600E8C607 /* LaunchScreen.storyboard */; };
+		3AAE650E2449D21A00BDB09C /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE650D2449D21A00BDB09C /* GeneralViewController.swift */; };
+		3AAE65182449E6F200BDB09C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AAE65172449E6F200BDB09C /* GoogleService-Info.plist */; };
 		3ABE21682444C77400239729 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE21672444C77400239729 /* MusicViewController.swift */; };
 		3ABE216A2444CC6100239729 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE21692444CC6100239729 /* Calculator.swift */; };
 		3ABE216E2444D77200239729 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE216D2444D77200239729 /* ResultViewController.swift */; };
@@ -27,6 +29,8 @@
 		3A656508243F2BE600E8C607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A65650B243F2BE600E8C607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A65650D243F2BE600E8C607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AAE650D2449D21A00BDB09C /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		3AAE65172449E6F200BDB09C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3ABE21672444C77400239729 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		3ABE21692444CC6100239729 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		3ABE216D2444D77200239729 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -66,12 +70,14 @@
 				3A656501243F2BE600E8C607 /* SceneDelegate.swift */,
 				3A656503243F2BE600E8C607 /* ViewController.swift */,
 				3ABE21672444C77400239729 /* MusicViewController.swift */,
+				3AAE650D2449D21A00BDB09C /* GeneralViewController.swift */,
 				3ABE216D2444D77200239729 /* ResultViewController.swift */,
 				3ABE21692444CC6100239729 /* Calculator.swift */,
 				3A656505243F2BE600E8C607 /* Main.storyboard */,
 				3A656508243F2BE600E8C607 /* Assets.xcassets */,
 				3A65650A243F2BE600E8C607 /* LaunchScreen.storyboard */,
 				3A65650D243F2BE600E8C607 /* Info.plist */,
+				3AAE65172449E6F200BDB09C /* GoogleService-Info.plist */,
 			);
 			path = StreamClean;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 				3A65650C243F2BE600E8C607 /* LaunchScreen.storyboard in Resources */,
 				3A656509243F2BE600E8C607 /* Assets.xcassets in Resources */,
 				3A656507243F2BE600E8C607 /* Main.storyboard in Resources */,
+				3AAE65182449E6F200BDB09C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ABE21682444C77400239729 /* MusicViewController.swift in Sources */,
+				3AAE650E2449D21A00BDB09C /* GeneralViewController.swift in Sources */,
 				3A656504243F2BE600E8C607 /* ViewController.swift in Sources */,
 				3A656500243F2BE600E8C607 /* AppDelegate.swift in Sources */,
 				3ABE216A2444CC6100239729 /* Calculator.swift in Sources */,

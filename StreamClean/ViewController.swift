@@ -35,38 +35,48 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         pickerData = ["Netflix", "HBO", "Amazon Prime", "Hulu", "DR TV", "Other"]
     }
     
+    
+    
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        if (hoursField!.text == "" && minutesField.text == "") {
+        
+        let usage = validateUserInput(picker: picker, pickerData: pickerData, hours: hoursField, result: resultField, minutes: minutesField)
+        calculator.addVideo(usage: usage)
+        
+    }
+    
+    
+    // Function used to validate user input through out the app
+    public func validateUserInput(picker:UIPickerView, pickerData: [String], hours:UITextField, result:UITextView, minutes:UITextField) -> (Int) {
+        
+        var hoursInt:Int = 0
+        var minutesInt:Int = 0
+        
+        if (hours.text == "" && minutes.text == "") {
             print("user did not input anything")
         }
         else {
             // Check if the user did not write any hours
-            if(hoursField.text == "") {
-                resultField.text = resultField.text + "✓ \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(minutesField.text!) minutes!\n"
+            if(hours.text == "") {
+                result.text = result.text + "✓ \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(minutes.text!) minutes!\n"
             }
-            // Check if the user did not write any minutes
-            else if (minutesField.text == "") {
-                resultField.text = resultField.text + "✓ \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(hoursField.text!) hours!\n"
+                // Check if the user did not write any minutes
+            else if (minutes.text == "") {
+                result.text = result.text + "✓ \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(hours.text!) hours!\n"
             }
-            // Else add the following to the resultField for the user to see
+                // Else add the following to the resultField for the user to see
             else {
-                resultField.text = resultField.text + "✓ \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(hoursField.text!) hours and \(minutesField.text!) minutes!\n"
+                result.text = result.text + "✓ \(pickerData[picker.selectedRow(inComponent: 0)]) chosen for \(hours.text!) hours and \(minutes.text!) minutes!\n"
             }
-        
-            // Convert user input to integers, and sum up minutes before adding it to calculator.
-            let hours = (Int(hoursField.text!) ?? 0) * 60   // Using minutes
-            let minutes = Int(minutesField.text!) ?? 0
-            calculator.addVideo(usage: hours + minutes)
             
+            // Convert user input to integers, and sum up minutes before adding it to calculator.
+            hoursInt = (Int(hours.text!) ?? 0) * 60   // Using minutes
+            minutesInt = Int(minutes.text!) ?? 0
             // Reset fields so they are ready for more input
-            hoursField.text = ""
-            minutesField.text = ""
+            hours.text = ""
+            minutes.text = ""
+            
         }
-    }
-    
-    
-        func nextButtonPressed(_ sender: UIBarButtonItem) {
-        //performSegue(withIdentifier: ", sender: self)
+        return hoursInt + minutesInt
     }
         
     // Number of columns of data

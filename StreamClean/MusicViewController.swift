@@ -20,6 +20,8 @@ class MusicViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     var pickerData: [String] = [String]()
     
+    var vc = ViewController()
+    
     var calculator = Calculator.calculator
     
 
@@ -36,6 +38,11 @@ class MusicViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
 
     @IBAction func addButtonPressed(_ sender: UIButton) {
+        
+        let usage = vc.validateUserInput(picker: musicServicePicker, pickerData: pickerData, hours: hoursField, result: resultField, minutes: minutesField)
+        calculator.addMusic(usage: usage)
+        
+        /*
         if (hoursField!.text == "" && minutesField.text == "") {
             print("user did not input anything")
         }
@@ -62,6 +69,7 @@ class MusicViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             hoursField.text = ""
             minutesField.text = ""
         }
+ */
     }
     
     // Number of columns of data
