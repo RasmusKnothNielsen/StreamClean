@@ -1,2 +1,5 @@
 # Ignore file with API key in it
 */GoogleService-Info.plist
+
+# Ignoring podfiles
+Pods/
