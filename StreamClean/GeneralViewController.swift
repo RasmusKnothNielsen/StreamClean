@@ -17,7 +17,6 @@ class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     @IBOutlet weak var minutesField: UITextField!
     
-    
     @IBOutlet weak var resultField: UITextView!
     
     var pickerData: [String] = [String]()
@@ -38,7 +37,6 @@ class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         // Populate the picker
         pickerData = ["Facebook", "SnapChat", "Instagram", "Skype", "Teams", "Zoom"]
         
-
         
     }
     
@@ -67,7 +65,7 @@ class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return pickerData.count
     }
     
-    // The data to return fopr the row and component (column) that's being passed in
+    // The data to return the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
