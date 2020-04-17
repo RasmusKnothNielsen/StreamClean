@@ -22,3 +22,5 @@
 - General design of pages and overall design
 
 - Icon design
+
+- Add bell sounds and audio of a woman chanting "shame"
