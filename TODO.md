@@ -13,7 +13,7 @@
 
 - Add Firebase Functionality for storing previous user inputs
 
-- Find out if it is possible to get the data directly from Screen Time (It is not!)
+- Tell the user that the sign up was successful
 
 - Implement the logic to calculate the milage used when streaming ✓
 

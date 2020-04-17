@@ -51,6 +51,8 @@ class AuthenticationViewController: UIViewController {
             if firebaseManager!.validateEmail(candidate: email) && firebaseManager!.validatePassword(password: password){
                 // If email and password is present, try to sign up.
                 firebaseManager!.signUp(email: email, password: password)
+                
+                // TODO Tell the user that the sign up was successful
             }
         }
     }
