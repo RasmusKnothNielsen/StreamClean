@@ -42,6 +42,7 @@ class AuthenticationViewController: UIViewController {
     }
     
     @IBAction func signInFacebookButtonPressed(_ sender: UIButton) {
+        print("Facebook button pressed")
         facebookManager?.loginToFacebook()
     }
     
@@ -54,6 +55,16 @@ class AuthenticationViewController: UIViewController {
                 
                 // TODO Tell the user that the sign up was successful
             }
+        }
+    }
+    
+    
+    @IBAction func signOutButtonPressed(_ sender: UIButton) {
+        do {
+          try auth.signOut()
+            print("\(auth.currentUser) logged out!")
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
         }
     }
     

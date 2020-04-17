@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    
+    @IBOutlet weak var helperTextView: UITextView!
+    
     @IBOutlet weak var picker: UIPickerView!
     
     @IBOutlet weak var hoursField: UITextField!
@@ -33,6 +36,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         // Populate the picker
         pickerData = ["Netflix", "HBO", "Amazon Prime", "Hulu", "DR TV", "Other"]
+        
+        helperTextView.text = "Choose your service(s) and add time spent."
+    
     }
     
     
@@ -41,6 +47,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         let usage = validateUserInput(picker: picker, pickerData: pickerData, hours: hoursField, result: resultField, minutes: minutesField)
         calculator.addVideo(usage: usage)
+        hoursField.resignFirstResponder()
+        minutesField.resignFirstResponder()
         
     }
         
