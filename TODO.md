@@ -14,10 +14,13 @@
     - Firebase ✓
     - Facebook ✓
 
-- Saving and retrieving user inputs
-  - Add Firebase Functionality for storing previous user inputs
-  - If saving the usage to the database, get the current week number and save it with the rest of the information
-  - Adding an overview of earlier user inputs and progress over time.
+- CRUD Usage
+  - Create document with usage in users collection ✓
+  - Read specific document in user collection
+  - Read all documents in user collection
+  - Update document in user collection
+  - Delete document in user collection
+  - Delete all documents in user collection, deleting the whole collection as a consequence.
 
 - Tell the user that the sign up was successful ✓
 
