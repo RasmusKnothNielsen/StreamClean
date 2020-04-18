@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Class to hold a specific users usage in a specific week
+// Class to hold users usage in a specific week
 class Usage {
     
     var documentUID: String
@@ -16,17 +16,43 @@ class Usage {
     var videoStreamingTime: Int
     var musicStreamingTime: Int
     var videoConferencingTime: Int
-    var SoMeTime: Int
+    var soMeTime: Int
+    var date: Date
     
-    init(videoStreamingTime: Int,
+    // Constructor with DocumentID
+    init(documentID: String,
+         videoStreamingTime: Int,
          musicStreamingTime: Int,
          videoConferenceTime: Int,
          soMeTime: Int) {
+        self.documentUID = documentID
         self.videoStreamingTime = videoStreamingTime
         self.musicStreamingTime = musicStreamingTime
         self.videoConferencingTime = videoConferenceTime
-        self.SoMeTime = soMeTime
-        self.documentUID = UUID().uuidString
+        self.soMeTime = soMeTime
+        self.date = Date()
     }
     
+    // Constructor without DocumentID
+    init(videoStreamingTime: Int,
+     musicStreamingTime: Int,
+     videoConferenceTime: Int,
+     soMeTime: Int) {
+        self.videoStreamingTime = videoStreamingTime
+        self.musicStreamingTime = musicStreamingTime
+        self.videoConferencingTime = videoConferenceTime
+        self.soMeTime = soMeTime
+        self.documentUID = ""
+        self.date = Date()
+    }
+    
+    // Constructor with the calculator object
+    init(calculator: Calculator) {
+        self.videoStreamingTime = calculator.videoStreamingTime
+        self.musicStreamingTime = calculator.musicStreamingTime
+        self.videoConferencingTime = calculator.videoConferencingTime
+        self.soMeTime = calculator.soMeTime
+        self.documentUID = ""
+        self.date = Date()
+    }
 }

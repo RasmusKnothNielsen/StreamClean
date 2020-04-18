@@ -14,6 +14,8 @@ class FirebaseManager {
     let auth = Auth.auth()
     let parentVC:UIViewController
     
+    let firebaseCRUD = FirebaseCRUD()
+    
     init(parentVC:UIViewController) {
         self.parentVC = parentVC
         // Add listener
@@ -60,7 +62,7 @@ class FirebaseManager {
             if error == nil {   // No error encountered during sign up
                 print("Successfully logged in to Firebase! \(result.debugDescription)")
                 
-                // Add username to current user
+                // TODO: Add username to current user
                 
                 signedUp = true
             }

@@ -7,19 +7,33 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class FirebaseCRUD {
     
+    // Instance of database connection
+    private static let db = Firestore.firestore()
+    
+    
     // CREATE
     
-    // Create collection with the users UID
-    func createCollection(userUID: String) -> Bool {
-        return false
-    }
-    
     // Create a document in a users collection
-    func createDocument(userUID: String, usage: Usage) -> Bool {
-        return false
+    func createDocument(userUID: String, usage: Usage) {
+        let docRef = FirebaseCRUD.db.collection(userUID).document()
+        // Create new usage object with the documentID generated from firebase
+        let newUsage = Usage(documentID: docRef.documentID, videoStreamingTime: usage.videoStreamingTime, musicStreamingTime: usage.musicStreamingTime, videoConferenceTime: usage.videoConferencingTime, soMeTime: usage.soMeTime)
+        
+        // Create map with information from usage
+        var map = [String:Any]()
+        map["videoStreamingTime"] = usage.videoStreamingTime
+        map["musicStreamingTime"] = usage.musicStreamingTime
+        map["videoConferenceTime"] = usage.videoConferencingTime
+        map["soMeTime"] = usage.soMeTime
+        map["date"] = usage.date
+        
+        // Upload data to firestore
+        docRef.setData(map)
+        print("Document created with id: \(docRef.documentID)")
     }
     
     

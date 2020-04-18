@@ -16,13 +16,21 @@ class Calculator {
     var videoStreamingTime: Int
     var musicStreamingTime: Int
     var videoConferencingTime: Int
-    var SoMeTime: Int
+    var soMeTime: Int
     
     init() {
         self.videoStreamingTime = 0
         self.musicStreamingTime = 0
         self.videoConferencingTime = 0
-        self.SoMeTime = 0
+        self.soMeTime = 0
+    }
+    
+    // Constructor for when we need to add a whole session
+    init(usage: Usage) {
+        self.videoStreamingTime = usage.videoStreamingTime
+        self.musicStreamingTime = usage.musicStreamingTime
+        self.videoConferencingTime = usage.videoConferencingTime
+        self.soMeTime = usage.soMeTime
     }
     
     // Weights for determining 1 hours worth of stream in kilometers driven
@@ -31,7 +39,7 @@ class Calculator {
     var videoWeight = 20
     var musicWeight = 10
     var videoConferencingWeight = 15
-    var SoMeWeight = 5
+    var soMeWeight = 5
     
     
     func addVideo(usage: Int) {
@@ -44,7 +52,7 @@ class Calculator {
     
     // general streaming functionality
     func addGeneralSoMe(usage: Int) {
-        SoMeTime += usage
+        soMeTime += usage
     }
     func addGeneralVideoConference(usage: Int) {
         videoConferencingTime += usage
@@ -55,7 +63,7 @@ class Calculator {
             ((videoStreamingTime / 60) * videoWeight) +
             ((musicStreamingTime / 60) * musicWeight) +
             ((videoConferencingTime / 60) * videoConferencingWeight) +
-            ((SoMeTime / 60) * SoMeWeight)
+            ((soMeTime / 60) * soMeWeight)
         return sum
     }
     
