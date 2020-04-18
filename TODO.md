@@ -41,6 +41,7 @@
 ## Design
 - General design of pages and overall design
 - Icon design
+- Add splash screen
 
 ## Miscellaneous
 - Research what the "average user" normally streams and add it, so we can compare user usage and average usage.
