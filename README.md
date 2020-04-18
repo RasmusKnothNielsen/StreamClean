@@ -7,7 +7,7 @@ Furthermore it is intended to inform users about how much CO2 they use when they
 
 Consider it a work in process, since large chuncks of potential functionality is still missing, not to talk about the design is still not done.
 
-These are functionality that I want to implement over time:
+These are some of the functionality that I want to implement over time:
 
 - Add User signup / Sign in with apple, email, facebook and so on
 
@@ -19,5 +19,5 @@ These are functionality that I want to implement over time:
 
 - Icon design
 
-
+For more information and many other things to be implemented, take a look at the TODO.md file.
 
