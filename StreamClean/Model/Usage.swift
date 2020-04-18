@@ -24,13 +24,14 @@ class Usage {
          videoStreamingTime: Int,
          musicStreamingTime: Int,
          videoConferenceTime: Int,
-         soMeTime: Int) {
+         soMeTime: Int,
+         date: Date) {
         self.documentUID = documentID
         self.videoStreamingTime = videoStreamingTime
         self.musicStreamingTime = musicStreamingTime
         self.videoConferencingTime = videoConferenceTime
         self.soMeTime = soMeTime
-        self.date = Date()
+        self.date = date
     }
     
     // Constructor without DocumentID

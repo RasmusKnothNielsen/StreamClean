@@ -21,7 +21,7 @@ class FirebaseCRUD {
     func createDocument(userUID: String, usage: Usage) {
         let docRef = FirebaseCRUD.db.collection(userUID).document()
         // Create new usage object with the documentID generated from firebase
-        let newUsage = Usage(documentID: docRef.documentID, videoStreamingTime: usage.videoStreamingTime, musicStreamingTime: usage.musicStreamingTime, videoConferenceTime: usage.videoConferencingTime, soMeTime: usage.soMeTime)
+        let newUsage = Usage(documentID: docRef.documentID, videoStreamingTime: usage.videoStreamingTime, musicStreamingTime: usage.musicStreamingTime, videoConferenceTime: usage.videoConferencingTime, soMeTime: usage.soMeTime, date: usage.date)
         
         // Create map with information from usage
         var map = [String:Any]()
@@ -41,16 +41,60 @@ class FirebaseCRUD {
     
     // Read all documents from users collection
     func readAllDocuments(userUID: String) -> [Usage] {
-        //TODO: Filler data, replace with actual code
-        let usage = Usage(videoStreamingTime: 1, musicStreamingTime: 1, videoConferenceTime: 1, soMeTime: 1)
-        return [usage]
+        // Initialize Usage array to be appended to
+        var data: [Usage] = []
+        FirebaseCRUD.db.collection(userUID).getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Error when retrieving all documents. \(err)")
+            }
+            else {
+                for document in querySnapshot!.documents {
+                    // Get a map of data from the document
+                    let map = document.data()
+                    let documentUID = document.documentID
+                    let videoStreamingTime = map["videoStreamingTime"] as! Int
+                    let musicStreamingTime = map["musicStreamingTime"] as! Int
+                    let videoConferenceTime = map["videoConferenceTime"] as! Int
+                    let soMeTime = map["soMeTime"] as! Int
+                    let date = map["date"] as! Date
+                    
+                    // Create Usage object
+                    let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime, date: date)
+                    // Append to array
+                    data.append(usage)
+                }
+            }
+        }
+        return data
     }
     
     // Read specific document from users collection
     func readDocument(userUID: String, documentUID: String) -> Usage {
-        //TODO: Filler data, replace with actual code
-        let usage = Usage(videoStreamingTime: 1, musicStreamingTime: 1, videoConferenceTime: 1, soMeTime: 1)
-        return usage
+        
+        // Create field to hold data from query and fill it with dummy data.
+        var result: Usage = Usage(videoStreamingTime: 0, musicStreamingTime: 0, videoConferenceTime: 0, soMeTime: 0)
+        
+        let docRef = FirebaseCRUD.db.collection(userUID).document(documentUID)
+        
+        docRef.getDocument { (document, err) in
+            if let document = document, document.exists {
+                // Get a map of data from the document
+                let map = document.data()
+                let documentUID = document.documentID
+                let videoStreamingTime = map!["videoStreamingTime"] as! Int
+                let musicStreamingTime = map!["musicStreamingTime"] as! Int
+                let videoConferenceTime = map!["videoConferenceTime"] as! Int
+                let soMeTime = map!["soMeTime"] as! Int
+                let date = map!["date"] as! Date
+                
+                // Create Usage object
+                result = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime, date: date)
+                
+            }
+        }
+        
+        
+        return result
     }
     
     // UPDATE

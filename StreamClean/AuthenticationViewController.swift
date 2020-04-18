@@ -57,7 +57,4 @@ class AuthenticationViewController: UIViewController {
         }
     }
     
-    
-    
-
 }
