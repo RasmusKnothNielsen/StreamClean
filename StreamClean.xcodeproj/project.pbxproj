@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A5A61A4244B210D0050EEBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A61A3244B210D0050EEBF /* SignUpViewController.swift */; };
+		3A5A61A7244B294E0050EEBF /* FirebaseCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A61A6244B294E0050EEBF /* FirebaseCRUD.swift */; };
+		3A5A61AA244B2A690050EEBF /* Usage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A61A9244B2A690050EEBF /* Usage.swift */; };
 		3A656500243F2BE600E8C607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6564FF243F2BE600E8C607 /* AppDelegate.swift */; };
 		3A656502243F2BE600E8C607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A656501243F2BE600E8C607 /* SceneDelegate.swift */; };
 		3A656504243F2BE600E8C607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A656503243F2BE600E8C607 /* ViewController.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A5A61A3244B210D0050EEBF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3A5A61A6244B294E0050EEBF /* FirebaseCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCRUD.swift; sourceTree = "<group>"; };
+		3A5A61A9244B2A690050EEBF /* Usage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usage.swift; sourceTree = "<group>"; };
 		3A6564FC243F2BE600E8C607 /* StreamClean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreamClean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6564FF243F2BE600E8C607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A656501243F2BE600E8C607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A5A61A5244B29350050EEBF /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				3A5A61A6244B294E0050EEBF /* FirebaseCRUD.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		3A5A61A8244B2A280050EEBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A5A61A9244B2A690050EEBF /* Usage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3A6564F3243F2BE600E8C607 = {
 			isa = PBXGroup;
 			children = (
@@ -79,14 +101,17 @@
 		3A6564FE243F2BE600E8C607 /* StreamClean */ = {
 			isa = PBXGroup;
 			children = (
+				3A5A61A8244B2A280050EEBF /* Model */,
+				3A5A61A5244B29350050EEBF /* DB */,
 				3AAE65192449F39500BDB09C /* Authentication */,
 				3A6564FF243F2BE600E8C607 /* AppDelegate.swift */,
 				3A656501243F2BE600E8C607 /* SceneDelegate.swift */,
 				3A656503243F2BE600E8C607 /* ViewController.swift */,
-				3AAE651E2449F4DF00BDB09C /* AuthenticationViewController.swift */,
 				3ABE21672444C77400239729 /* MusicViewController.swift */,
 				3AAE650D2449D21A00BDB09C /* GeneralViewController.swift */,
 				3ABE216D2444D77200239729 /* ResultViewController.swift */,
+				3AAE651E2449F4DF00BDB09C /* AuthenticationViewController.swift */,
+				3A5A61A3244B210D0050EEBF /* SignUpViewController.swift */,
 				3ABE21692444CC6100239729 /* Calculator.swift */,
 				3A656505243F2BE600E8C607 /* Main.storyboard */,
 				3A656508243F2BE600E8C607 /* Assets.xcassets */,
@@ -239,13 +264,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5A61A4244B210D0050EEBF /* SignUpViewController.swift in Sources */,
 				3ABE21682444C77400239729 /* MusicViewController.swift in Sources */,
 				3AAE650E2449D21A00BDB09C /* GeneralViewController.swift in Sources */,
 				3AAE651F2449F4DF00BDB09C /* AuthenticationViewController.swift in Sources */,
 				3A656504243F2BE600E8C607 /* ViewController.swift in Sources */,
 				3A656500243F2BE600E8C607 /* AppDelegate.swift in Sources */,
+				3A5A61AA244B2A690050EEBF /* Usage.swift in Sources */,
 				3AAE651B2449F3A900BDB09C /* FirebaseManager.swift in Sources */,
 				3ABE216A2444CC6100239729 /* Calculator.swift in Sources */,
+				3A5A61A7244B294E0050EEBF /* FirebaseCRUD.swift in Sources */,
 				3AAE651D2449F3EA00BDB09C /* FacebookManager.swift in Sources */,
 				3A656502243F2BE600E8C607 /* SceneDelegate.swift in Sources */,
 				3ABE216E2444D77200239729 /* ResultViewController.swift in Sources */,

@@ -19,8 +19,7 @@ class FirebaseManager {
         // Add listener
         auth.addIDTokenDidChangeListener { (auth, user) in
             if user != nil {
-                print("Status: User is logged in: \(user)")
-                //parentVC.loggedInTextView.text = "You are now logged in!"
+                print("Status: User is logged in: \(user)\n\tUID: \(auth.currentUser?.uid)")
             }
             else {
                 print("Status: User is logged out")
@@ -32,11 +31,10 @@ class FirebaseManager {
         auth.signIn(withEmail: email, password: password) { (result, error) in
             if error == nil {
                 print("User logged in")
-                self.parentVC.performSegue(withIdentifier: "loggedIn", sender: self)
             }
             else {
                 print("Error encountered while signing in")
-                self.parentVC.performSegue(withIdentifier: "loggedIn", sender: self)
+                print(error.debugDescription)
             }
             
         }
@@ -56,17 +54,21 @@ class FirebaseManager {
         }
     }
     
-    func signUp(username: String, email: String, password: String) {
+    func signUp(username: String, email: String, password: String) -> Bool {
+        var signedUp = false
         auth.createUser(withEmail: email, password: password) { (result, error) in
             if error == nil {   // No error encountered during sign up
                 print("Successfully logged in to Firebase! \(result.debugDescription)")
                 
                 // Add username to current user
+                
+                signedUp = true
             }
             else {
                 print("Failed to log in to Firebase. \(error.debugDescription)")
             }
         }
+        return signedUp
     }
     
     func validateEmail(candidate: String) -> Bool {

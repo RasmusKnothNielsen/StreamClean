@@ -56,10 +56,19 @@ class SignUpViewController: UIViewController {
                 if firebaseManager!.validateEmail(candidate: email) && firebaseManager!.validatePassword(password: password){
                     
                     // If email and password is present, try to sign up.
-                    firebaseManager!.signUp(username: username, email: email, password: password)
+                    let signedUp = firebaseManager!.signUp(username: username, email: email, password: password)
                 
+                    
+                    let userUID = firebaseManager!.auth.currentUser?.uid
                     resultTextView.text = "User successfully created!"
-                    print("User created: \n\tUsername: \(username)\n\tEmail: \(email)")
+                    print("User created: \n\tUsername: \(username)\n\tEmail: \(email)\n\tUID: \(userUID!)")
+                        
+                    // Create a folder on firebase for users saved documents
+                    
+                    
+                }
+                else {
+                    resultTextView.text = "Email must be valid and password must be 8 characters or longer"
                 }
             }
             // Passwords not identical
