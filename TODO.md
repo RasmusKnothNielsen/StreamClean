@@ -1,5 +1,3 @@
-#TODO list
-
 ## General construction
 - Make new page to display other streaming choices, such as
   - Music streaming ✓
