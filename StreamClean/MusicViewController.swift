@@ -36,7 +36,7 @@ class MusicViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         pickerData = ["Spotify", "Tidal", "Apple Music", "Youtube Music"]
         
-        helperTextView.text = "Choose your service(s) and add time spent."
+        helperTextView.text = "Choose your service(s) and add time spent in the last week."
         
     }
     

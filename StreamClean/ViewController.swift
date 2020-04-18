@@ -37,7 +37,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // Populate the picker
         pickerData = ["Netflix", "HBO", "Amazon Prime", "Hulu", "DR TV", "Other"]
         
-        helperTextView.text = "Choose your service(s) and add time spent."
+        helperTextView.text = "Choose your service(s) and add time spent in the last week."
     
     }
     

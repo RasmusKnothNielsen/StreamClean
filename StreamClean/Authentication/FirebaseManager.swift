@@ -12,9 +12,9 @@ import FirebaseAuth
 class FirebaseManager {
     
     let auth = Auth.auth()
-    let parentVC:AuthenticationViewController
+    let parentVC:UIViewController
     
-    init(parentVC:AuthenticationViewController) {
+    init(parentVC:UIViewController) {
         self.parentVC = parentVC
         // Add listener
         auth.addIDTokenDidChangeListener { (auth, user) in
@@ -56,10 +56,12 @@ class FirebaseManager {
         }
     }
     
-    func signUp(email: String, password: String) {
+    func signUp(username: String, email: String, password: String) {
         auth.createUser(withEmail: email, password: password) { (result, error) in
             if error == nil {   // No error encountered during sign up
                 print("Successfully logged in to Firebase! \(result.debugDescription)")
+                
+                // Add username to current user
             }
             else {
                 print("Failed to log in to Firebase. \(error.debugDescription)")

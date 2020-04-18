@@ -28,6 +28,8 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
         firebaseManager = FirebaseManager(parentVC: self)   // Enable firebaseManager to update GUI
         facebookManager = FacebookManager(parentVC: self);  // Enable Facebook to update GUI
+        
+        // If user is logged in, alter name and function of sign in button to sign out button
     }
     
 
@@ -42,22 +44,8 @@ class AuthenticationViewController: UIViewController {
     }
     
     @IBAction func signInFacebookButtonPressed(_ sender: UIButton) {
-        print("Facebook button pressed")
         facebookManager?.loginToFacebook()
     }
-    
-    @IBAction func newUserButtonPressed(_ sender: UIButton) {
-        // Verify that user has typed an email and password
-        if let email = emailField.text, let password = passwordField.text {
-            if firebaseManager!.validateEmail(candidate: email) && firebaseManager!.validatePassword(password: password){
-                // If email and password is present, try to sign up.
-                firebaseManager!.signUp(email: email, password: password)
-                
-                // TODO Tell the user that the sign up was successful
-            }
-        }
-    }
-    
     
     @IBAction func signOutButtonPressed(_ sender: UIButton) {
         do {
