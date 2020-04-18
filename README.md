@@ -3,7 +3,8 @@
 Repository for the IOS app StreamClean
 
 This project is a sideproject intended to practice IOS development.
-Furthermore it is intended to inform users about how much CO2 they use when they stream.
+Furthermore it is intended to make people more aware of how much CO2 emission is related to daily streaming.
+Through this awareness, I hope to inspire customers to demand cleaner streamingservices, CO2 emission-wise.
 
 Consider it a work in process, since large chuncks of potential functionality is still missing, not to talk about the design is still not done.
 
