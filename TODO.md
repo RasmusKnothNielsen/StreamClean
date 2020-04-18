@@ -36,3 +36,5 @@
 
 - Icon design
 
+- Add bell sounds and audio of a woman chanting "shame"
+
