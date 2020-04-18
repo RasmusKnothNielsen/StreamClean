@@ -41,5 +41,5 @@
 ## Miscellaneous
 - Consider if the user wants to choose the quality of the stream, since 4k streaming is vastly different from 720p
 - Implement the logic to calculate the milage used when streaming ✓
-- Add bell sounds and audio of a woman chanting "shame"
+- Add soundbit of a woman chanting "shame" while ringing a bell
 
