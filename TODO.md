@@ -14,10 +14,13 @@
     - Firebase ✓
     - Facebook ✓
 
-- Saving and retrieving user inputs
-  - Add Firebase Functionality for storing previous user inputs
-  - If saving the usage to the database, get the current week number and save it with the rest of the information
-  - Adding an overview of earlier user inputs and progress over time.
+- CRUD Usage
+  - Create document with usage in users collection ✓
+  - Read specific document in user collection
+  - Read all documents in user collection
+  - Update document in user collection
+  - Delete document in user collection
+  - Delete all documents in user collection, deleting the whole collection as a consequence.
 
 - Tell the user that the sign up was successful ✓
 
@@ -31,12 +34,18 @@
    - Your streaming usage is 5% higher this week than the last input in week X
 
 
+## Facebook
+  - Enabling sharing result to Facebook?
+  - Enabling a way to challenge friends in consumption?
+
 ## Design
 - General design of pages and overall design
 - Icon design
+- Add splash screen
 
 ## Miscellaneous
+- Research what the "average user" normally streams and add it, so we can compare user usage and average usage.
 - Consider if the user wants to choose the quality of the stream, since 4k streaming is vastly different from 720p
 - Implement the logic to calculate the milage used when streaming ✓
-- Add bell sounds and audio of a woman chanting "shame"
+- Add soundbit of a woman chanting "shame" while ringing a bell
 
