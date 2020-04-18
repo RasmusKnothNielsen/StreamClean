@@ -10,6 +10,7 @@ import UIKit
 
 class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var helperTextView: UITextView!
     
     @IBOutlet weak var picker: UIPickerView!
     
@@ -36,6 +37,8 @@ class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         // Populate the picker
         pickerData = ["Facebook", "SnapChat", "Instagram", "Skype", "Teams", "Zoom"]
+        
+        helperTextView.text = "Choose your service(s) and add time spent in the last week."
         
         
     }

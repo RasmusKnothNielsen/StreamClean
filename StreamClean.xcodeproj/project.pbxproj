@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		3A65650C243F2BE600E8C607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A65650A243F2BE600E8C607 /* LaunchScreen.storyboard */; };
 		3AAE650E2449D21A00BDB09C /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE650D2449D21A00BDB09C /* GeneralViewController.swift */; };
 		3AAE65182449E6F200BDB09C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AAE65172449E6F200BDB09C /* GoogleService-Info.plist */; };
+		3AAE651B2449F3A900BDB09C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE651A2449F3A900BDB09C /* FirebaseManager.swift */; };
+		3AAE651D2449F3EA00BDB09C /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE651C2449F3EA00BDB09C /* FacebookManager.swift */; };
+		3AAE651F2449F4DF00BDB09C /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE651E2449F4DF00BDB09C /* AuthenticationViewController.swift */; };
 		3ABE21682444C77400239729 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE21672444C77400239729 /* MusicViewController.swift */; };
 		3ABE216A2444CC6100239729 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE21692444CC6100239729 /* Calculator.swift */; };
 		3ABE216E2444D77200239729 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE216D2444D77200239729 /* ResultViewController.swift */; };
@@ -32,6 +35,9 @@
 		3A65650D243F2BE600E8C607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AAE650D2449D21A00BDB09C /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		3AAE65172449E6F200BDB09C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3AAE651A2449F3A900BDB09C /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		3AAE651C2449F3EA00BDB09C /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
+		3AAE651E2449F4DF00BDB09C /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		3ABE21672444C77400239729 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		3ABE21692444CC6100239729 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		3ABE216D2444D77200239729 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -73,9 +79,11 @@
 		3A6564FE243F2BE600E8C607 /* StreamClean */ = {
 			isa = PBXGroup;
 			children = (
+				3AAE65192449F39500BDB09C /* Authentication */,
 				3A6564FF243F2BE600E8C607 /* AppDelegate.swift */,
 				3A656501243F2BE600E8C607 /* SceneDelegate.swift */,
 				3A656503243F2BE600E8C607 /* ViewController.swift */,
+				3AAE651E2449F4DF00BDB09C /* AuthenticationViewController.swift */,
 				3ABE21672444C77400239729 /* MusicViewController.swift */,
 				3AAE650D2449D21A00BDB09C /* GeneralViewController.swift */,
 				3ABE216D2444D77200239729 /* ResultViewController.swift */,
@@ -97,13 +105,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3AAE65192449F39500BDB09C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				3AAE651A2449F3A900BDB09C /* FirebaseManager.swift */,
+				3AAE651C2449F3EA00BDB09C /* FacebookManager.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		EBF76FFC3ACDC6BF8F3E8D45 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				7D0E127997980EDA914451D2 /* Pods-StreamClean.debug.xcconfig */,
 				977D46AAD94F4FDE5226898A /* Pods-StreamClean.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -225,9 +241,12 @@
 			files = (
 				3ABE21682444C77400239729 /* MusicViewController.swift in Sources */,
 				3AAE650E2449D21A00BDB09C /* GeneralViewController.swift in Sources */,
+				3AAE651F2449F4DF00BDB09C /* AuthenticationViewController.swift in Sources */,
 				3A656504243F2BE600E8C607 /* ViewController.swift in Sources */,
 				3A656500243F2BE600E8C607 /* AppDelegate.swift in Sources */,
+				3AAE651B2449F3A900BDB09C /* FirebaseManager.swift in Sources */,
 				3ABE216A2444CC6100239729 /* Calculator.swift in Sources */,
+				3AAE651D2449F3EA00BDB09C /* FacebookManager.swift in Sources */,
 				3A656502243F2BE600E8C607 /* SceneDelegate.swift in Sources */,
 				3ABE216E2444D77200239729 /* ResultViewController.swift in Sources */,
 			);

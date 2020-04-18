@@ -6,7 +6,13 @@ target 'StreamClean' do
   use_frameworks!
 
   # Pods for StreamClean
+
+  # Firebase for login and cloud storage
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+
+  # Facebook pods for login
+  pod 'FacebookLogin'
+  pod 'FacebookCore'
 
 end

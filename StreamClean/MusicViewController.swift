@@ -10,6 +10,8 @@ import UIKit
 
 class MusicViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var helperTextView: UITextView!
+    
     @IBOutlet weak var musicServicePicker: UIPickerView!
     
     @IBOutlet weak var hoursField: UITextField!
@@ -33,6 +35,8 @@ class MusicViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         self.musicServicePicker.dataSource = self
         
         pickerData = ["Spotify", "Tidal", "Apple Music", "Youtube Music"]
+        
+        helperTextView.text = "Choose your service(s) and add time spent in the last week."
         
     }
     
