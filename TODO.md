@@ -34,11 +34,16 @@
    - Your streaming usage is 5% higher this week than the last input in week X
 
 
+## Facebook
+  - Enabling sharing result to Facebook?
+  - Enabling a way to challenge friends in consumption?
+
 ## Design
 - General design of pages and overall design
 - Icon design
 
 ## Miscellaneous
+- Research what the "average user" normally streams and add it, so we can compare user usage and average usage.
 - Consider if the user wants to choose the quality of the stream, since 4k streaming is vastly different from 720p
 - Implement the logic to calculate the milage used when streaming ✓
 - Add soundbit of a woman chanting "shame" while ringing a bell
