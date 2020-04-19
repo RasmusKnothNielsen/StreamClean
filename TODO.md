@@ -44,6 +44,7 @@
 - Add splash screen
 
 ## Miscellaneous
+- Consider if a tab bar is a good idea for presenting buttons for history and account information
 - Research what the "average user" normally streams and add it, so we can compare user usage and average usage.
 - Consider if the user wants to choose the quality of the stream, since 4k streaming is vastly different from 720p
 - Implement the logic to calculate the milage used when streaming ✓
