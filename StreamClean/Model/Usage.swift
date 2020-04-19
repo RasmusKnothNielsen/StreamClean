@@ -56,4 +56,20 @@ class Usage {
         self.documentUID = ""
         self.date = Date()
     }
+    
+    // TEST Init
+    // Constructor with DocumentID
+    init(documentID: String,
+         videoStreamingTime: Int,
+         musicStreamingTime: Int,
+         videoConferenceTime: Int,
+         soMeTime: Int) {
+        self.documentUID = documentID
+        self.videoStreamingTime = videoStreamingTime
+        self.musicStreamingTime = musicStreamingTime
+        self.videoConferencingTime = videoConferenceTime
+        self.soMeTime = soMeTime
+        self.date = Date()
+    }
+    
 }

@@ -39,7 +39,7 @@ class AuthenticationViewController: UIViewController {
             if firebaseManager!.validateEmail(candidate: email) && firebaseManager!.validatePassword(password: password){
                 // If email and password is present, try to sign in.
                 firebaseManager!.signIn(email: emailField.text!, password: passwordField.text!)
-                print(firebaseManager!.auth.currentUser?.uid)
+                
             }
         }
     }
@@ -55,6 +55,18 @@ class AuthenticationViewController: UIViewController {
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
+    }
+    
+    // TODO: DEBUGGING AND TESTING
+    @IBAction func getAllDocumentsButtonPressed(_ sender: UIButton) {
+    
+        let user = firebaseManager!.auth.currentUser!.uid
+        print("UserID: \(user)")
+        let firebaseCRUD = FirebaseCRUD()
+        // Create an async call, so we can get the documents back when they are done
+        let response = firebaseCRUD.readAllDocuments(userUID: user)
+        // Display response
+        
     }
     
 }

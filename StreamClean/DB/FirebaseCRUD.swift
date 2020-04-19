@@ -20,8 +20,6 @@ class FirebaseCRUD {
     // Create a document in a users collection
     func createDocument(userUID: String, usage: Usage) {
         let docRef = FirebaseCRUD.db.collection(userUID).document()
-        // Create new usage object with the documentID generated from firebase
-        let newUsage = Usage(documentID: docRef.documentID, videoStreamingTime: usage.videoStreamingTime, musicStreamingTime: usage.musicStreamingTime, videoConferenceTime: usage.videoConferencingTime, soMeTime: usage.soMeTime, date: usage.date)
         
         // Create map with information from usage
         var map = [String:Any]()
@@ -48,6 +46,7 @@ class FirebaseCRUD {
                 print("Error when retrieving all documents. \(err)")
             }
             else {
+                print("Got all documents from Firestore")
                 for document in querySnapshot!.documents {
                     // Get a map of data from the document
                     let map = document.data()
@@ -56,10 +55,16 @@ class FirebaseCRUD {
                     let musicStreamingTime = map["musicStreamingTime"] as! Int
                     let videoConferenceTime = map["videoConferenceTime"] as! Int
                     let soMeTime = map["soMeTime"] as! Int
-                    let date = map["date"] as! Date
+                    //let date = map["date"] as! Date
                     
                     // Create Usage object
-                    let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime, date: date)
+                    let usage = Usage(documentID: documentUID, videoStreamingTime: videoConferenceTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime)
+                    
+                    // DEBUG
+                    print("DocumentID: \(documentUID)")
+                    print("\tVideo streaming time: \(videoStreamingTime)")
+                    print("\tMusic streaming time: \(musicStreamingTime)")
+                    
                     // Append to array
                     data.append(usage)
                 }
@@ -112,15 +117,12 @@ class FirebaseCRUD {
         return false
     }
     
-    // Delete all documents in users collection
+    // Delete all documents in users collection and thus deleting the whole collection
     func deleteAllDocuments(userUID: String) -> Bool {
         return false
     }
     
-    // Delete users collection
-    func deleteCollection(UserUID: String) -> Bool {
-        return false
-    }
+    
     
     
 }

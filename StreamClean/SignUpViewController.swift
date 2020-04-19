@@ -63,7 +63,6 @@ class SignUpViewController: UIViewController {
                     resultTextView.text = "User successfully created!"
                     print("User created: \n\tUsername: \(username)\n\tEmail: \(email)\n\tUID: \(userUID!)")
                         
-                    // Create a folder on firebase for users saved documents
                     
                     
                 }

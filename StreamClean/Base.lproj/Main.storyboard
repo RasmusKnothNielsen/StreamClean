@@ -195,6 +195,14 @@
                                     <action selector="signOutButtonPressed:" destination="XAq-mx-YR8" eventType="touchUpInside" id="4iW-1L-qKa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJv-Bq-WVf">
+                                <rect key="frame" x="238" y="638" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Get all documents"/>
+                                <connections>
+                                    <action selector="getAllDocumentsButtonPressed:" destination="XAq-mx-YR8" eventType="touchUpInside" id="Pla-cC-AYF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
