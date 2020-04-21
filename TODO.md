@@ -17,7 +17,7 @@
 - CRUD Usage
   - Create document with usage in users collection ✓
   - Read specific document in user collection
-  - Read all documents in user collection
+  - Read all documents in user collection ✓
   - Update document in user collection
   - Delete document in user collection
   - Delete all documents in user collection, deleting the whole collection as a consequence.
@@ -32,6 +32,8 @@
 
  - If user is logged in, and have previous inputs, compare the current usage with the last one, and show the difference. Did the user use more or less? Example:
    - Your streaming usage is 5% higher this week than the last input in week X
+  
+ - If a non-existing user creates a user after they have done the input; Relocate the document from "John Doe" to their UID folder.
 
 
 ## Facebook
