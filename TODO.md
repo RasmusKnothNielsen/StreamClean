@@ -14,6 +14,8 @@
     - Firebase ✓
     - Facebook ✓
 
+- When signing up with Facebook, find a way to get the email identifier with, when creating the Firebase account, instead of it displaying as "-"
+
 - CRUD Usage
   - Create document with usage in users collection ✓
   - Read specific document in user collection
