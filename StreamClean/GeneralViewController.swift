@@ -23,7 +23,7 @@ class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     var pickerData: [String] = [String]()
     
     var soMePlatforms = ["Facebook", "SnapChat", "Instagram"]
-    var videoConferencePlatforms = ["Skype", "Teams", "Zoom"]
+    var videoConferencePlatforms = ["Skype", "Teams", "Zoom", "Hangout"]
     
     var vc = ViewController()
     
@@ -36,7 +36,7 @@ class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.picker.dataSource = self
         
         // Populate the picker
-        pickerData = ["Facebook", "SnapChat", "Instagram", "Skype", "Teams", "Zoom"]
+        pickerData = ["Facebook", "SnapChat", "Instagram", "Skype", "Teams", "Zoom", "Hangout"]
         
         helperTextView.text = "Choose your service(s) and add time spent in the last week."
         

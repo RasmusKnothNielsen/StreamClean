@@ -61,7 +61,7 @@ class SignUpViewController: UIViewController {
                     
                     let userUID = firebaseManager!.auth.currentUser?.uid
                     resultTextView.text = "User successfully created!"
-                    print("User created: \n\tUsername: \(username)\n\tEmail: \(email)\n\tUID: \(userUID!)")
+                    print("User created: \n\tUsername: \(username)\n\tEmail: \(email)\n\tUID: \(userUID ?? "none")")
                         
                     
                     

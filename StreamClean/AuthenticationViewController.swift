@@ -50,8 +50,9 @@ class AuthenticationViewController: UIViewController {
     
     @IBAction func signOutButtonPressed(_ sender: UIButton) {
         do {
-          try auth.signOut()
-            print("\(auth.currentUser) logged out!")
+            let currentUser = auth.currentUser
+            try auth.signOut()
+            print("\(currentUser?.uid ?? "No one") logged out!")
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
@@ -60,12 +61,19 @@ class AuthenticationViewController: UIViewController {
     // TODO: DEBUGGING AND TESTING
     @IBAction func getAllDocumentsButtonPressed(_ sender: UIButton) {
     
-        let user = firebaseManager!.auth.currentUser!.uid
-        print("UserID: \(user)")
         let firebaseCRUD = FirebaseCRUD()
-        // Create an async call, so we can get the documents back when they are done
-        let response = firebaseCRUD.readAllDocuments(userUID: user)
-        // Display response
+        
+        // If a user is logged in, get all the documents from that user
+        if let user = firebaseManager!.auth.currentUser?.uid {
+            print("UserID: \(user)")
+            // Create an async call, so we can get the documents back when they are done
+            let response = firebaseCRUD.readAllDocuments(userUID: user)
+        }
+        else {
+            // If a user is not logged in, get all "John Doe" documents
+            let response = firebaseCRUD.readAllDocuments(userUID: "John Doe")
+        }
+        
         
     }
     

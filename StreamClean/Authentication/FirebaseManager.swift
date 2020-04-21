@@ -21,10 +21,10 @@ class FirebaseManager {
         // Add listener
         auth.addIDTokenDidChangeListener { (auth, user) in
             if user != nil {
-                print("Status: User is logged in: \(user)\n\tUID: \(auth.currentUser?.uid)")
+                print("Status: User is logged in: \(user)\n\tUID: \(auth.currentUser?.uid)\n")
             }
             else {
-                print("Status: User is logged out")
+                print("Status: User is logged out\n")
             }
         }
     }
