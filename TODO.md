@@ -1,4 +1,10 @@
 ## General construction
+
+- Implement more designpatterns.
+  - Something for inheritance, to I don't do the same on several viewcontrollers
+  - Delegating responsibilities to specific classes
+  - Extendability?
+
 - Make new page to display other streaming choices, such as
   - Music streaming ✓
   - General internet usage (Facebook etc.) ✓
