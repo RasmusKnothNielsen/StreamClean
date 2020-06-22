@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kaB-aP-0Y6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kaB-aP-0Y6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -579,26 +579,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-Iy-Oje">
-                                <rect key="frame" x="57" y="245" width="299" height="354"/>
+                                <rect key="frame" x="58" y="104" width="299" height="424.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lyk-C1-a11">
+                                <rect key="frame" x="58" y="525" width="299" height="337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="centerX" secondItem="TEe-wz-0TJ" secondAttribute="centerX" id="AR6-wt-T1q"/>
-                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="top" secondItem="bzL-q7-1F6" secondAttribute="top" constant="157" id="kXg-T9-OKM"/>
-                            <constraint firstItem="bzL-q7-1F6" firstAttribute="bottom" secondItem="5G4-Iy-Oje" secondAttribute="bottom" constant="263" id="vSY-lW-X2M"/>
-                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="leading" secondItem="bzL-q7-1F6" secondAttribute="leading" constant="57" id="xmr-AE-HER"/>
+                            <constraint firstItem="Lyk-C1-a11" firstAttribute="bottom" secondItem="bzL-q7-1F6" secondAttribute="bottom" id="E08-Fi-Ciz"/>
+                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="leading" secondItem="Lyk-C1-a11" secondAttribute="leading" id="E7I-6Q-Dvu"/>
+                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="top" secondItem="bzL-q7-1F6" secondAttribute="top" constant="16" id="KsY-8C-RVa"/>
+                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="leading" secondItem="bzL-q7-1F6" secondAttribute="leading" constant="58" id="P17-wr-lWe"/>
+                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="centerX" secondItem="TEe-wz-0TJ" secondAttribute="centerX" id="UWz-Eq-lgz"/>
+                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="trailing" secondItem="Lyk-C1-a11" secondAttribute="trailing" id="cVL-6E-vXR"/>
+                            <constraint firstItem="Lyk-C1-a11" firstAttribute="top" secondItem="bzL-q7-1F6" secondAttribute="top" constant="437" id="gZC-8u-igQ"/>
+                            <constraint firstItem="bzL-q7-1F6" firstAttribute="bottom" secondItem="5G4-Iy-Oje" secondAttribute="bottom" constant="333.5" id="kKL-Tr-yiz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bzL-q7-1F6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Result" id="ZJx-gV-5Ld">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Brc-pC-xte">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1NF-Ya-A53">
-                                <rect key="frame" x="-23" y="-15" width="92" height="30"/>
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign in"/>
                                 <connections>
@@ -608,6 +621,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="comparisonView" destination="Lyk-C1-a11" id="Kew-0q-Aic"/>
                         <outlet property="resultView" destination="5G4-Iy-Oje" id="48W-Gs-94Y"/>
                     </connections>
                 </viewController>
@@ -635,6 +649,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g7w-G8-RD2"/>
+        <segue reference="nv4-aj-8gu"/>
     </inferredMetricsTieBreakers>
 </document>

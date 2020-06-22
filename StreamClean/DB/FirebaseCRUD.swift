@@ -58,7 +58,7 @@ class FirebaseCRUD {
                     //let date = map["date"] as! Date
                     
                     // Create Usage object
-                    let usage = Usage(documentID: documentUID, videoStreamingTime: videoConferenceTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime)
+                    let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime)
                     
                     // DEBUG
                     print("DocumentID: \(documentUID)")
@@ -71,6 +71,60 @@ class FirebaseCRUD {
             }
         }
         return data
+    }
+    
+    func getAverageOfDocuments(userUID: String, vc: ResultViewController, currentUsage: Int) {
+        var collectionOfSum: [Int] = []
+        FirebaseCRUD.db.collection(userUID).getDocuments { (querySnapshot, err) in
+        if let err = err {
+            print("Error when retrieving all documents. \(err)")
+        }
+        else {
+            print("Got all documents from Firestore")
+            for document in querySnapshot!.documents {
+                // Get a map of data from the document
+                let map = document.data()
+                let documentUID = document.documentID
+                let videoStreamingTime = map["videoStreamingTime"] as! Int
+                let musicStreamingTime = map["musicStreamingTime"] as! Int
+                let videoConferenceTime = map["videoConferenceTime"] as! Int
+                let soMeTime = map["soMeTime"] as! Int
+                //let date = map["date"] as! Date
+                
+                // Create Usage object
+                let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime)
+                
+                let calc = Calculator.init(usage: usage)
+                let result = calc.getSum()
+                collectionOfSum.append(result)
+            }
+            let sum = collectionOfSum.reduce(0, { x, y in
+                x + y
+            })
+            let result = sum / collectionOfSum.count
+            
+            var text = ""
+            
+            var startText = "Your Streaming consumption is approximately"
+            if userUID == "John Doe" {
+                startText = "The average of our anonymous users is approximately"
+            }
+            
+            if result > currentUsage {
+                let percentageDifference = (currentUsage / result * 100) - 100
+                text = "\(startText) \(percentageDifference)% lower than your entered usage, congratulation!\n Average is: \(result)"
+            }
+            else if result < currentUsage {
+                let percentageDifference = currentUsage / result * 100
+                text = "\(startText) \(percentageDifference)% higher than your entered usage!\n Average is: \(result)"
+            }
+            else {
+                text = "You managed to hit your average; Not worse, not better."
+            }
+            
+            vc.comparisonView.text = text
+            }
+        }
     }
     
     // Read specific document from users collection
@@ -98,31 +152,47 @@ class FirebaseCRUD {
             }
         }
         
-        
         return result
     }
     
     // UPDATE
     
     // Update specific document in users collection
-    func updateDocument(userUID: String, documentUID: String) -> Bool {
-        return false
+    func updateDocument(userUID: String, documentUID: String, key: String, value: String) {
+        FirebaseCRUD.db.collection(userUID).document(documentUID).updateData([key : value])
     }
     
     
     // DELETE
     
     // Delete specific document in users collection
-    func deleteDocument(userUID: String, documentUID: String) -> Bool {
-        return false
+    func deleteDocument(userUID: String, documentUID: String) {
+        FirebaseCRUD.db.collection(userUID).document(documentUID).delete() { err in
+            if let err = err {
+                print("Error: \(err.localizedDescription) occured when trying to delete document: \(documentUID) in collection: \(userUID)")
+            } else {
+                print("\(documentUID) successfully deleted from collection: \(userUID)")
+            }
+        }
     }
     
     // Delete all documents in users collection and thus deleting the whole collection
-    func deleteAllDocuments(userUID: String) -> Bool {
-        return false
+    func deleteAllDocuments(userUID: String) {
+        // Get list of documentUIDs from userUID collection
+        FirebaseCRUD.db.collection(userUID).getDocuments { (querySnapshot, err) in
+        if let err = err {
+            print("Error when retrieving all documents. \(err)")
+        }
+        else {
+            print("Got all documents from Firestore")
+            for document in querySnapshot!.documents {
+                // Call deleteDocument on each of them
+                self.deleteDocument(userUID: userUID, documentUID: document.documentID)
+                }
+            }
+            print("All documents in collection: \(userUID) is now deleted")
+        }
     }
-    
-    
     
     
 }
