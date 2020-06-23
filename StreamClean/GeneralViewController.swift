@@ -55,6 +55,8 @@ class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         else {
             calculator.addGeneralVideoConference(usage: usage)
         }
+        hoursField.resignFirstResponder()
+        minutesField.resignFirstResponder()
         
     }
     

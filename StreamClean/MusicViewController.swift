@@ -44,8 +44,9 @@ class MusicViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
         let usage = vc.validateUserInput(picker: musicServicePicker, pickerData: pickerData, hours: hoursField, result: resultField, minutes: minutesField)
-        
         calculator.addMusic(usage: usage)
+        hoursField.resignFirstResponder()
+        minutesField.resignFirstResponder()
         
     }
     
