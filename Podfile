@@ -15,4 +15,7 @@ target 'StreamClean' do
   pod 'FacebookLogin'
   pod 'FacebookCore'
 
+  # Showing Gifs in app
+  pod 'SwiftGifOrigin'
+
 end

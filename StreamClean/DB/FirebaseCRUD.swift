@@ -110,14 +110,17 @@ class FirebaseCRUD {
                 startText = "The average of our anonymous users is approximately"
             }
             
+            // If the user has a lower usage than the average
             if result > currentUsage {
-                let percentageDifference = (currentUsage / result * 100) - 100
-                text = "\(startText) \(percentageDifference)% lower than your entered usage, congratulation!\n Average is: \(result)"
+                let percentageDifference : Double = (Double(result - currentUsage) / Double(result)) * 100
+                text = "\(startText) \(Int(percentageDifference))% lower than your entered usage, congratulation!\n Average is: \(result)"
             }
+            // if the user had a higher usage than the average
             else if result < currentUsage {
-                let percentageDifference = currentUsage / result * 100
-                text = "\(startText) \(percentageDifference)% higher than your entered usage!\n Average is: \(result)"
+                let percentageDifference : Double = ((Double(currentUsage) / Double(result) * 100) - 100)
+                text = "\(startText) \(Int(percentageDifference))% higher than your entered usage!\n Average is: \(result)"
             }
+            // If the user hit the same amount of usage as the average
             else {
                 text = "You managed to hit your average; Not worse, not better."
             }

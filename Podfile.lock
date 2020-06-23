@@ -261,12 +261,14 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - SwiftGifOrigin (1.7.0)
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - Firebase/Auth
   - Firebase/Firestore
+  - SwiftGifOrigin
 
 SPEC REPOS:
   trunk:
@@ -291,6 +293,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - SwiftGifOrigin
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -314,7 +317,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
 
-PODFILE CHECKSUM: 1d27d38bbc028a3e6ff34db8c64639fdc80fc8c9
+PODFILE CHECKSUM: 214b3e8d29096c4a32f0bfaa3ae5e4d18aeddac9
 
 COCOAPODS: 1.9.3

@@ -8,11 +8,13 @@
 
 import UIKit
 import FirebaseAuth
+import SwiftGifOrigin
 
 class ResultViewController: UIViewController {
 
     @IBOutlet weak var resultView: UITextView!
     @IBOutlet weak var comparisonView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
     
     var calculator = Calculator.calculator
     
@@ -25,28 +27,26 @@ class ResultViewController: UIViewController {
 
         resultView.text = "Your CO2 usage is equivalent to \(calculator.getSum()) km driven in a newer Diesel car.\n\nDemand greener alternatives from your streaming provider.\n\n For more information, visit @StreamClean"
         
+        imageView.image = UIImage.gif(url: "https://cdn.dribbble.com/users/966681/screenshots/2811861/dribbble14.gif?vid=1")
+        
         // Create Usage object from calculator
         let usage = Usage(calculator: calculator)
         // If user is logged in
         let authenticated = self.auth.currentUser?.uid
+        var userUID = ""
+        // Check if the user is logged in, and set userUID accordingly
         if authenticated != nil {
-            firebaseCRUD.createDocument(userUID: self.auth.currentUser!.uid, usage: usage)
-            
-            // Get the average of the users usage, and display it
-            // Start off by getting all the usages of the specific user
-            firebaseCRUD.getAverageOfDocuments(userUID: self.auth.currentUser!.uid, vc: self, currentUsage: calculator.getSum())
-            
-            
+            userUID = self.auth.currentUser!.uid
         }
         // If user is not logged in, save the usage anyway for analyzing purposes
         else {
-            firebaseCRUD.createDocument(userUID: "John Doe", usage: usage)
-            
-            // Get the average of "John Doe" usage, and display it
-            // Start off by getting all the usages of the specific user
-            firebaseCRUD.getAverageOfDocuments(userUID: "John Doe", vc: self, currentUsage: calculator.getSum())
+            userUID = "John Doe"
 
         }
+        // Save the usage to Firebase
+        firebaseCRUD.createDocument(userUID: userUID, usage: usage)
+        // Get the average of the users usage, and display it
+        firebaseCRUD.getAverageOfDocuments(userUID: userUID, vc: self, currentUsage: calculator.getSum())
         
         
         
