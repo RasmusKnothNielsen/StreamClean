@@ -25,9 +25,9 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        resultView.text = "Your CO2 usage is equivalent to \(calculator.getSum()) km driven in a newer Diesel car.\n\nDemand greener alternatives from your streaming provider.\n\n For more information, visit @StreamClean"
+        resultView.text = "Your CO2 usage is equivalent to \(calculator.getSum()) km driven in a newer Diesel car.\n\nDemand greener alternatives from your streaming provider."
         
-        imageView.image = UIImage.gif(url: "https://cdn.dribbble.com/users/966681/screenshots/2811861/dribbble14.gif?vid=1")
+        imageView.loadGif(name: "drivingcar")
         
         // Create Usage object from calculator
         let usage = Usage(calculator: calculator)
@@ -46,7 +46,7 @@ class ResultViewController: UIViewController {
         // Save the usage to Firebase
         firebaseCRUD.createDocument(userUID: userUID, usage: usage)
         // Get the average of the users usage, and display it
-        firebaseCRUD.getAverageOfDocuments(userUID: userUID, vc: self, currentUsage: calculator.getSum())
+        calculator.getAverageOfDocuments(userUID: userUID, vc: self)
         
         
         

@@ -578,37 +578,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-Iy-Oje">
-                                <rect key="frame" x="58" y="104" width="299" height="293"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lyk-C1-a11">
-                                <rect key="frame" x="58" y="616" width="299" height="246"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-Iy-Oje">
+                                <rect key="frame" x="58" y="104" width="298" height="263"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QLb-ry-V46">
+                                <rect key="frame" x="58" y="375" width="298" height="203"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="203" id="AgH-VQ-jrb"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lyk-C1-a11">
+                                <rect key="frame" x="58" y="586" width="298" height="246"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="246" id="Ii6-TY-Ei6"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLb-ry-V46">
-                                <rect key="frame" x="58" y="405" width="299" height="203"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Lyk-C1-a11" firstAttribute="bottom" secondItem="bzL-q7-1F6" secondAttribute="bottom" id="E08-Fi-Ciz"/>
-                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="leading" secondItem="Lyk-C1-a11" secondAttribute="leading" id="E7I-6Q-Dvu"/>
-                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="top" secondItem="bzL-q7-1F6" secondAttribute="top" constant="16" id="KsY-8C-RVa"/>
-                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="leading" secondItem="bzL-q7-1F6" secondAttribute="leading" constant="58" id="P17-wr-lWe"/>
-                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="centerX" secondItem="TEe-wz-0TJ" secondAttribute="centerX" id="UWz-Eq-lgz"/>
-                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="trailing" secondItem="Lyk-C1-a11" secondAttribute="trailing" id="cVL-6E-vXR"/>
-                            <constraint firstItem="Lyk-C1-a11" firstAttribute="top" secondItem="bzL-q7-1F6" secondAttribute="top" constant="437" id="gZC-8u-igQ"/>
-                            <constraint firstItem="bzL-q7-1F6" firstAttribute="bottom" secondItem="5G4-Iy-Oje" secondAttribute="bottom" constant="333.5" id="kKL-Tr-yiz"/>
+                            <constraint firstItem="QLb-ry-V46" firstAttribute="trailing" secondItem="Lyk-C1-a11" secondAttribute="trailing" id="7Jl-t6-pod"/>
+                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="centerX" secondItem="TEe-wz-0TJ" secondAttribute="centerX" id="7Mw-Fd-eQf"/>
+                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="leading" secondItem="bzL-q7-1F6" secondAttribute="leading" constant="58" id="A2q-xN-KpR"/>
+                            <constraint firstItem="Lyk-C1-a11" firstAttribute="top" secondItem="QLb-ry-V46" secondAttribute="bottom" constant="8" id="Nz9-wh-6OM"/>
+                            <constraint firstItem="bzL-q7-1F6" firstAttribute="bottom" secondItem="Lyk-C1-a11" secondAttribute="bottom" constant="30" id="R1c-5n-WgX"/>
+                            <constraint firstItem="QLb-ry-V46" firstAttribute="leading" secondItem="Lyk-C1-a11" secondAttribute="leading" id="XpX-HC-LCi"/>
+                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="leading" secondItem="QLb-ry-V46" secondAttribute="leading" id="YWG-BI-Uaq"/>
+                            <constraint firstItem="QLb-ry-V46" firstAttribute="top" secondItem="5G4-Iy-Oje" secondAttribute="bottom" constant="8" id="b9j-hP-Yji"/>
+                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="top" secondItem="bzL-q7-1F6" secondAttribute="top" constant="16" id="jJf-kL-Bgi"/>
+                            <constraint firstItem="5G4-Iy-Oje" firstAttribute="trailing" secondItem="QLb-ry-V46" secondAttribute="trailing" id="uT3-Fp-76G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bzL-q7-1F6"/>
                     </view>

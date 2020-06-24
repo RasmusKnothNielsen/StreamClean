@@ -23,6 +23,8 @@
 		3ABE21682444C77400239729 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE21672444C77400239729 /* MusicViewController.swift */; };
 		3ABE216A2444CC6100239729 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE21692444CC6100239729 /* Calculator.swift */; };
 		3ABE216E2444D77200239729 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE216D2444D77200239729 /* ResultViewController.swift */; };
+		596B8BF624A39D79007DA0FF /* Swift+gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596B8BF524A39D79007DA0FF /* Swift+gif.swift */; };
+		596B8BF824A39E97007DA0FF /* drivingcar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 596B8BF724A39E97007DA0FF /* drivingcar.gif */; };
 		59716874249F89C0009C04FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59716873249F89C0009C04FC /* GoogleService-Info.plist */; };
 		80C101637AEB519E12250003 /* Pods_StreamClean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716F578B960AE9348D394DD8 /* Pods_StreamClean.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		3ABE21672444C77400239729 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		3ABE21692444CC6100239729 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		3ABE216D2444D77200239729 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		596B8BF524A39D79007DA0FF /* Swift+gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+gif.swift"; sourceTree = "<group>"; };
+		596B8BF724A39E97007DA0FF /* drivingcar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = drivingcar.gif; sourceTree = "<group>"; };
 		59716873249F89C0009C04FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		716F578B960AE9348D394DD8 /* Pods_StreamClean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamClean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0E127997980EDA914451D2 /* Pods-StreamClean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamClean.debug.xcconfig"; path = "Target Support Files/Pods-StreamClean/Pods-StreamClean.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		3A6564F3243F2BE600E8C607 = {
 			isa = PBXGroup;
 			children = (
+				596B8BF524A39D79007DA0FF /* Swift+gif.swift */,
 				3A6564FE243F2BE600E8C607 /* StreamClean */,
 				3A6564FD243F2BE600E8C607 /* Products */,
 				EBF76FFC3ACDC6BF8F3E8D45 /* Pods */,
@@ -101,6 +106,7 @@
 		3A6564FE243F2BE600E8C607 /* StreamClean */ = {
 			isa = PBXGroup;
 			children = (
+				596B8BF924A3A0B9007DA0FF /* Calculator */,
 				3A5A61A8244B2A280050EEBF /* Model */,
 				3A5A61A5244B29350050EEBF /* DB */,
 				3AAE65192449F39500BDB09C /* Authentication */,
@@ -113,6 +119,7 @@
 				3AAE651E2449F4DF00BDB09C /* AuthenticationViewController.swift */,
 				3A5A61A3244B210D0050EEBF /* SignUpViewController.swift */,
 				3ABE21692444CC6100239729 /* Calculator.swift */,
+				596B8BF724A39E97007DA0FF /* drivingcar.gif */,
 				3A656505243F2BE600E8C607 /* Main.storyboard */,
 				3A656508243F2BE600E8C607 /* Assets.xcassets */,
 				3A65650A243F2BE600E8C607 /* LaunchScreen.storyboard */,
@@ -137,6 +144,13 @@
 				3AAE651C2449F3EA00BDB09C /* FacebookManager.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		596B8BF924A3A0B9007DA0FF /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 		EBF76FFC3ACDC6BF8F3E8D45 /* Pods */ = {
@@ -211,6 +225,7 @@
 				3A65650C243F2BE600E8C607 /* LaunchScreen.storyboard in Resources */,
 				59716874249F89C0009C04FC /* GoogleService-Info.plist in Resources */,
 				3A656509243F2BE600E8C607 /* Assets.xcassets in Resources */,
+				596B8BF824A39E97007DA0FF /* drivingcar.gif in Resources */,
 				3A656507243F2BE600E8C607 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +287,7 @@
 				3A656500243F2BE600E8C607 /* AppDelegate.swift in Sources */,
 				3A5A61AA244B2A690050EEBF /* Usage.swift in Sources */,
 				3AAE651B2449F3A900BDB09C /* FirebaseManager.swift in Sources */,
+				596B8BF624A39D79007DA0FF /* Swift+gif.swift in Sources */,
 				3ABE216A2444CC6100239729 /* Calculator.swift in Sources */,
 				3A5A61A7244B294E0050EEBF /* FirebaseCRUD.swift in Sources */,
 				3AAE651D2449F3EA00BDB09C /* FacebookManager.swift in Sources */,

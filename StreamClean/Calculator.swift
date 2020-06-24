@@ -67,4 +67,64 @@ class Calculator {
         return sum
     }
     
+    func getAverageOfDocuments(userUID: String, vc: ResultViewController) {
+        
+        var collectionOfSum: [Int] = []
+        FirebaseCRUD.db.collection(userUID).getDocuments { (querySnapshot, err) in
+        if let err = err {
+            print("Error when retrieving all documents. \(err)")
+        }
+        else {
+            print("Got all documents from Firestore")
+            for document in querySnapshot!.documents {
+                // Get a map of data from the document
+                let map = document.data()
+                let documentUID = document.documentID
+                let videoStreamingTime = map["videoStreamingTime"] as! Int
+                let musicStreamingTime = map["musicStreamingTime"] as! Int
+                let videoConferenceTime = map["videoConferenceTime"] as! Int
+                let soMeTime = map["soMeTime"] as! Int
+                //let date = map["date"] as! Date
+                
+                // Create Usage object
+                let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime)
+                
+                let calc = Calculator.init(usage: usage)
+                let result = calc.getSum()
+                collectionOfSum.append(result)
+            }
+            let sum = collectionOfSum.reduce(0, { x, y in
+                x + y
+            })
+            let result = sum / collectionOfSum.count
+            
+            var text = ""
+            
+            var startText = "Your average streaming consumption is approximately"
+            if userUID == "John Doe" {
+                startText = "The average of our anonymous users streaming consumption is approximately"
+            }
+            
+            let currentUsage = self.getSum()
+            
+            // If the user has a lower usage than the average
+            if result > currentUsage {
+                let percentageDifference : Double = (Double(result - currentUsage) / Double(result)) * 100
+                text = "\(startText) \(Int(percentageDifference))% higher than your entered usage, congratulation!\n Average is: \(result)"
+            }
+            // if the user had a higher usage than the average
+            else if result < currentUsage {
+                let percentageDifference : Double = ((Double(currentUsage) / Double(result) * 100) - 100)
+                text = "\(startText) \(Int(percentageDifference))% lower than your entered usage!\n Average is: \(result)"
+            }
+            // If the user hit the same amount of usage as the average
+            else {
+                text = "You managed to hit your average; Not worse, not better."
+            }
+            
+            vc.comparisonView.text = text
+            }
+        }
+    }
+    
 }
