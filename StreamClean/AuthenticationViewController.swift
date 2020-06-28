@@ -14,13 +14,13 @@ import FacebookLogin
 class AuthenticationViewController: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
-    
     @IBOutlet weak var signInButton: UIButton!
     
     var firebaseManager:FirebaseManager?
     var facebookManager:FacebookManager?
+    
+    let profileVC = ProfileViewController()
     
     var auth = Auth.auth()  // Firebase authentication
     
@@ -39,6 +39,10 @@ class AuthenticationViewController: UIViewController {
             if firebaseManager!.validateEmail(candidate: email) && firebaseManager!.validatePassword(password: password){
                 // If email and password is present, try to sign in.
                 firebaseManager!.signIn(email: emailField.text!, password: passwordField.text!)
+                print("CurentUser in Authentication VC: \(auth.currentUser!.uid)")
+                profileVC.currentUser = String(auth.currentUser!.uid)
+                // if login is successful, go to profile page
+                performSegue(withIdentifier: "showProfile", sender: Any?.self)
                 
             }
         }
@@ -46,6 +50,7 @@ class AuthenticationViewController: UIViewController {
     
     @IBAction func signInFacebookButtonPressed(_ sender: UIButton) {
         facebookManager?.loginToFacebook()
+        performSegue(withIdentifier: "showProfile", sender: Any?.self)
     }
     
     @IBAction func signOutButtonPressed(_ sender: UIButton) {

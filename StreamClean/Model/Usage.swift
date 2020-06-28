@@ -19,6 +19,16 @@ class Usage {
     var soMeTime: Int
     var date: Date
     
+    // Empty constructor
+    init() {
+        self.documentUID = ""
+        self.videoStreamingTime = 0
+        self.musicStreamingTime = 0
+        self.videoConferencingTime = 0
+        self.soMeTime = 0
+        self.date = Date()
+    }
+    
     // Constructor with DocumentID
     init(documentID: String,
          videoStreamingTime: Int,

@@ -73,6 +73,42 @@ class FirebaseCRUD {
         return data
     }
     
+    // Read all documents from users collection
+    func readAll(userUID: String, viewController: ProfileViewController) {
+        // Initialize Usage array to be appended to
+        var data: [Usage] = []
+        FirebaseCRUD.db.collection(userUID).getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Error when retrieving all documents. \(err)")
+            }
+            else {
+                print("Got all documents from Firestore")
+                for document in querySnapshot!.documents {
+                    // Get a map of data from the document
+                    let map = document.data()
+                    let documentUID = document.documentID
+                    let videoStreamingTime = map["videoStreamingTime"] as! Int
+                    let musicStreamingTime = map["musicStreamingTime"] as! Int
+                    let videoConferenceTime = map["videoConferenceTime"] as! Int
+                    let soMeTime = map["soMeTime"] as! Int
+                    //let date = map["date"] as! Date
+                    
+                    // Create Usage object
+                    let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime)
+                    
+                    // DEBUG
+                    print("DocumentID: \(documentUID)")
+                    print("\tVideo streaming time: \(videoStreamingTime)")
+                    print("\tMusic streaming time: \(musicStreamingTime)")
+                    
+                    // Append to array
+                    viewController.usages.append(usage)
+                }
+            }
+        }
+        viewController.tableView.reloadData()
+    }
+    
     
     // Read specific document from users collection
     func readDocument(userUID: String, documentUID: String) -> Usage {
