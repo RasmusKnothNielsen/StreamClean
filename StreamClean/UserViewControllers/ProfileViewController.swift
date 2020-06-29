@@ -58,7 +58,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         // cells, without filling out the system memory unnecessary.
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
         
-        usages = usages.sorted() { $0.date > $1.date } // sort the usages by date
+        // sort the usages by date so that the tableview will show usages in the right order, from newest to oldest
+        usages = usages.sorted() { $0.date > $1.date }
         
         // Assign string from textArray to the cell
         let dateFormatter = DateFormatter()
@@ -73,6 +74,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell!
     }
     
+    /*
     // This enables the transition from tableview to the view controller
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         currentUsage = usages[indexPath.row]
@@ -81,6 +83,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         populateUsageTextView(usage: currentUsage)
         //performSegue(withIdentifier: "showUsageDetail", sender: self)
     }
+ */
     
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -137,8 +140,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             "You have Streamed \n\tvideo for: \(usage.videoStreamingTime) minutes\n" +
             "\tmusic for: \(usage.musicStreamingTime) minutes\n" +
             "\tconference for: \(usage.videoConferencingTime) minutes\n" +
-            "\tSocial Media for: \(usage.soMeTime) minutes\n" +
-            "On: \(usage.date)"
+            "\tSocial Media for: \(usage.soMeTime) minutes\n\n" +
+            "Which is equal to: \(Calculator(usage: usage).getSum()) km\ndriven in a newer diesel car."
     }
     
     // Function used to get the correct location on the operating system

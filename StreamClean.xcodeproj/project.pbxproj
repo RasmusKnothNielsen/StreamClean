@@ -47,7 +47,7 @@
 		3AAE651C2449F3EA00BDB09C /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		3AAE651E2449F4DF00BDB09C /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		3ABE21672444C77400239729 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
-		3ABE21692444CC6100239729 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		3ABE21692444CC6100239729 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Calculator.swift; path = StreamClean/Calculator.swift; sourceTree = SOURCE_ROOT; };
 		3ABE216D2444D77200239729 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		596B8BF524A39D79007DA0FF /* Swift+gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+gif.swift"; sourceTree = "<group>"; };
 		596B8BF724A39E97007DA0FF /* drivingcar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = drivingcar.gif; sourceTree = "<group>"; };
@@ -108,20 +108,14 @@
 		3A6564FE243F2BE600E8C607 /* StreamClean */ = {
 			isa = PBXGroup;
 			children = (
+				595E674B24AA434500A74CEF /* UserViewControllers */,
 				596B8BF924A3A0B9007DA0FF /* Calculator */,
 				3A5A61A8244B2A280050EEBF /* Model */,
 				3A5A61A5244B29350050EEBF /* DB */,
 				3AAE65192449F39500BDB09C /* Authentication */,
 				3A6564FF243F2BE600E8C607 /* AppDelegate.swift */,
 				3A656501243F2BE600E8C607 /* SceneDelegate.swift */,
-				3A656503243F2BE600E8C607 /* ViewController.swift */,
-				3ABE21672444C77400239729 /* MusicViewController.swift */,
-				3AAE650D2449D21A00BDB09C /* GeneralViewController.swift */,
-				3ABE216D2444D77200239729 /* ResultViewController.swift */,
-				3AAE651E2449F4DF00BDB09C /* AuthenticationViewController.swift */,
-				3A5A61A3244B210D0050EEBF /* SignUpViewController.swift */,
-				597C838424A8BF20007A07BA /* ProfileViewController.swift */,
-				3ABE21692444CC6100239729 /* Calculator.swift */,
+				595E674A24AA432500A74CEF /* InputViewControllers */,
 				596B8BF724A39E97007DA0FF /* drivingcar.gif */,
 				3A656505243F2BE600E8C607 /* Main.storyboard */,
 				3A656508243F2BE600E8C607 /* Assets.xcassets */,
@@ -149,9 +143,31 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		595E674A24AA432500A74CEF /* InputViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A656503243F2BE600E8C607 /* ViewController.swift */,
+				3ABE21672444C77400239729 /* MusicViewController.swift */,
+				3AAE650D2449D21A00BDB09C /* GeneralViewController.swift */,
+				3ABE216D2444D77200239729 /* ResultViewController.swift */,
+			);
+			path = InputViewControllers;
+			sourceTree = "<group>";
+		};
+		595E674B24AA434500A74CEF /* UserViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AAE651E2449F4DF00BDB09C /* AuthenticationViewController.swift */,
+				3A5A61A3244B210D0050EEBF /* SignUpViewController.swift */,
+				597C838424A8BF20007A07BA /* ProfileViewController.swift */,
+			);
+			path = UserViewControllers;
+			sourceTree = "<group>";
+		};
 		596B8BF924A3A0B9007DA0FF /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				3ABE21692444CC6100239729 /* Calculator.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
