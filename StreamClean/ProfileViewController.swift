@@ -27,13 +27,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("CurrentUser: \(auth.currentUser?.uid)")
-        //usages = firebaseCRUD.readAllDocuments(userUID: auth.currentUser!.uid)
         firebaseCRUD.readAll(userUID: auth.currentUser!.uid, viewController: self)
         usernameLabel.text = auth.currentUser?.email
         
-        print("Usages:")
-        print(usages)
         // Set these two to self, so the tableview references the app itself
         tableView.dataSource = self
         tableView.delegate = self
@@ -50,22 +46,29 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     // Function that returns the number of Strings in the array
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return usages.count
     }
     
     // Function that displays the cells in the Table View
     // If there is two Strings in the array, the following function will be called twice.
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // De-queue one of the cells from the our ReusableCells, so we can reuse cells
         // in our memory. This provides us with the ability to scroll through alot of
         // cells, without filling out the system memory unnecessary.
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
+        
+        usages = usages.sorted() { $0.date > $1.date } // sort the usages by date
+        
         // Assign string from textArray to the cell
-        let usage = usages[indexPath.row]
-        cell?.textLabel?.text = "\(usage.documentUID)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+
+        let formattedDate = dateFormatter.string(from: usages[indexPath.row].date)
+        //let dateOfUsage = "\(usages[indexPath.row].date)"
+        
+        cell?.textLabel?.text = formattedDate
         // return the cell, and unwrap it with the !, since it is an Optional
         return cell!
     }
