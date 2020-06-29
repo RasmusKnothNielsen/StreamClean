@@ -76,7 +76,6 @@ class FirebaseCRUD {
     // Read all documents from users collection
     func readAll(userUID: String, viewController: ProfileViewController) {
         // Initialize Usage array to be appended to
-        var data: [Usage] = []
         FirebaseCRUD.db.collection(userUID).getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Error when retrieving all documents. \(err)")
@@ -103,10 +102,14 @@ class FirebaseCRUD {
                     
                     // Append to array
                     viewController.usages.append(usage)
+                    print("From inside the snapshot:")
+                    print(viewController.usages)
                 }
             }
+            print("Usages from firebaseCRUD:")
+            print(viewController.usages)
+            viewController.tableView.reloadData()
         }
-        viewController.tableView.reloadData()
     }
     
     

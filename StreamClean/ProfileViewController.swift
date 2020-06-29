@@ -27,7 +27,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         //print("CurrentUser: \(auth.currentUser?.uid)")
-        usages = firebaseCRUD.readAllDocuments(userUID: auth.currentUser!.uid)
+        //usages = firebaseCRUD.readAllDocuments(userUID: auth.currentUser!.uid)
+        firebaseCRUD.readAll(userUID: auth.currentUser!.uid, viewController: self)
+        usernameLabel.text = auth.currentUser?.email
         
         print("Usages:")
         print(usages)
@@ -55,7 +57,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         // cells, without filling out the system memory unnecessary.
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
         // Assign string from textArray to the cell
-        //let note = CloudStorage.getNote(index: indexPath.row)
         let usage = usages[indexPath.row]
         cell?.textLabel?.text = "\(usage.documentUID)"
         // return the cell, and unwrap it with the !, since it is an Optional
@@ -66,14 +67,18 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         currentUsage = usages[indexPath.row]
         rowThatIsBeingEdited = indexPath.row
+        print("Taking the didDeselectRowAt method")
         performSegue(withIdentifier: "showUsageDetail", sender: self)
     }
     
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? UsageDetailsViewController {
-            viewController.textLabel.text = currentUsage.documentUID
+            viewController.textView.text = currentUsage.documentUID
         }
     }
+ */
+ 
     
     // EDIT
     // Function to handle cell pressed, so we can edit it
@@ -81,12 +86,13 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     {
         // Transfer the text from the row to the user input field
         rowThatIsBeingEdited = indexPath.row;
-        let usageDetailsVC: UsageDetailsViewController = UsageDetailsViewController()
         print("Now we are in ViewController")
         print("IndexPath.row is: \(rowThatIsBeingEdited)")
         print()
-        let usage = usages[rowThatIsBeingEdited]
-        usageDetailsVC.textLabel.text = usage.documentUID
+        currentUsage = usages[rowThatIsBeingEdited]
+        print("currentUsage:\(currentUsage.documentUID)")
+        //usageDetailsVC.textView.text = currentUsage.documentUID
+        print("Taking the didSelectRowAt method")
         performSegue(withIdentifier: "showUsageDetail", sender: nil)
         // Set editing to true
         editingRow = true;
