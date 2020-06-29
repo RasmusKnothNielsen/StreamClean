@@ -111,15 +111,25 @@ class Calculator {
             if result > currentUsage {
                 let percentageDifference : Double = (Double(result - currentUsage) / Double(result)) * 100
                 text = "\(startText) \(Int(percentageDifference))% higher than your entered usage, congratulation!\n Average is: \(result)"
+                vc.view.backgroundColor = .green
+                vc.resultView.backgroundColor = .green
+                vc.comparisonView.backgroundColor = .green
             }
             // if the user had a higher usage than the average
             else if result < currentUsage {
                 let percentageDifference : Double = ((Double(currentUsage) / Double(result) * 100) - 100)
                 text = "\(startText) \(Int(percentageDifference))% lower than your entered usage!\n Average is: \(result)"
+                vc.view.backgroundColor = .red
+                vc.resultView.backgroundColor = .red
+                vc.comparisonView.backgroundColor = .red
             }
             // If the user hit the same amount of usage as the average
             else {
                 text = "You managed to hit your average; Not worse, not better."
+                vc.view.backgroundColor = .blue
+                vc.resultView.backgroundColor = .blue
+                vc.comparisonView.backgroundColor = .blue
+
             }
             
             vc.comparisonView.text = text

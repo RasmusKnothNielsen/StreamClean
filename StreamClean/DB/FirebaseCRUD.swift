@@ -90,10 +90,12 @@ class FirebaseCRUD {
                     let musicStreamingTime = map["musicStreamingTime"] as! Int
                     let videoConferenceTime = map["videoConferenceTime"] as! Int
                     let soMeTime = map["soMeTime"] as! Int
-                    //let date = map["date"] as! Date
+                    let date = map["date"] as! Timestamp
+                    // Convert Firestore timestamp to swift Date
+                    let RequestedDate = date.dateValue()
                     
                     // Create Usage object
-                    let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime)
+                    let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime, date: RequestedDate)
                     
                     // DEBUG
                     print("DocumentID: \(documentUID)")

@@ -27,7 +27,6 @@
 		596B8BF824A39E97007DA0FF /* drivingcar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 596B8BF724A39E97007DA0FF /* drivingcar.gif */; };
 		59716874249F89C0009C04FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59716873249F89C0009C04FC /* GoogleService-Info.plist */; };
 		597C838524A8BF20007A07BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597C838424A8BF20007A07BA /* ProfileViewController.swift */; };
-		597C838724A8FDC9007A07BA /* UsageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597C838624A8FDC9007A07BA /* UsageDetailsViewController.swift */; };
 		80C101637AEB519E12250003 /* Pods_StreamClean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716F578B960AE9348D394DD8 /* Pods_StreamClean.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		596B8BF724A39E97007DA0FF /* drivingcar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = drivingcar.gif; sourceTree = "<group>"; };
 		59716873249F89C0009C04FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		597C838424A8BF20007A07BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		597C838624A8FDC9007A07BA /* UsageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageDetailsViewController.swift; sourceTree = "<group>"; };
 		716F578B960AE9348D394DD8 /* Pods_StreamClean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamClean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0E127997980EDA914451D2 /* Pods-StreamClean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamClean.debug.xcconfig"; path = "Target Support Files/Pods-StreamClean/Pods-StreamClean.debug.xcconfig"; sourceTree = "<group>"; };
 		977D46AAD94F4FDE5226898A /* Pods-StreamClean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamClean.release.xcconfig"; path = "Target Support Files/Pods-StreamClean/Pods-StreamClean.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				3AAE651E2449F4DF00BDB09C /* AuthenticationViewController.swift */,
 				3A5A61A3244B210D0050EEBF /* SignUpViewController.swift */,
 				597C838424A8BF20007A07BA /* ProfileViewController.swift */,
-				597C838624A8FDC9007A07BA /* UsageDetailsViewController.swift */,
 				3ABE21692444CC6100239729 /* Calculator.swift */,
 				596B8BF724A39E97007DA0FF /* drivingcar.gif */,
 				3A656505243F2BE600E8C607 /* Main.storyboard */,
@@ -295,7 +292,6 @@
 				3AAE651B2449F3A900BDB09C /* FirebaseManager.swift in Sources */,
 				596B8BF624A39D79007DA0FF /* Swift+gif.swift in Sources */,
 				3ABE216A2444CC6100239729 /* Calculator.swift in Sources */,
-				597C838724A8FDC9007A07BA /* UsageDetailsViewController.swift in Sources */,
 				3A5A61A7244B294E0050EEBF /* FirebaseCRUD.swift in Sources */,
 				3AAE651D2449F3EA00BDB09C /* FacebookManager.swift in Sources */,
 				597C838524A8BF20007A07BA /* ProfileViewController.swift in Sources */,

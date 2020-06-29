@@ -12,6 +12,7 @@ import FirebaseAuth
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var usageTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
     let firebaseCRUD = FirebaseCRUD()
@@ -40,6 +41,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.reloadData()
     }
     
+
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        print("Deleting")
+        firebaseCRUD.deleteDocument(userUID: auth.currentUser!.uid, documentUID: "Uc2kw7gc4fgv2t4SUCgR")
+        print("Deleted")
+    }
     
     
     // Function that returns the number of Strings in the array
@@ -68,7 +75,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         currentUsage = usages[indexPath.row]
         rowThatIsBeingEdited = indexPath.row
         print("Taking the didDeselectRowAt method")
-        performSegue(withIdentifier: "showUsageDetail", sender: self)
+        populateUsageTextView(usage: currentUsage)
+        //performSegue(withIdentifier: "showUsageDetail", sender: self)
     }
     
     /*
@@ -91,12 +99,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         print()
         currentUsage = usages[rowThatIsBeingEdited]
         print("currentUsage:\(currentUsage.documentUID)")
-        //usageDetailsVC.textView.text = currentUsage.documentUID
-        print("Taking the didSelectRowAt method")
-        performSegue(withIdentifier: "showUsageDetail", sender: nil)
+        populateUsageTextView(usage: currentUsage)
         // Set editing to true
         editingRow = true;
     }
+ 
     
     // DELETE
     // Function to handle the deletion of a row
@@ -104,10 +111,31 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     {
       if editingStyle == .delete
       {
-        firebaseCRUD.deleteDocument(userUID: currentUser, documentUID: usages[indexPath.row].documentUID)
+        print("Trying to delete")
+        print(usages[indexPath.row].documentUID)
+        print("Before deletion")
+        print(usages)
+        
+        firebaseCRUD.deleteDocument(userUID: auth.currentUser!.uid, documentUID: usages[indexPath.row].documentUID)
         // Delete the given row from the table view
+        self.usages.remove(at: indexPath.row)
+        print("After deletion")
+        print(usages)
         self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        self.tableView.reloadData()
+        //self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        //self.tableView.reloadData()
+ 
       }
+    }
+    
+    func populateUsageTextView(usage: Usage) {
+        usageTextView.text =
+            "You have Streamed \n\tvideo for: \(usage.videoStreamingTime) minutes\n" +
+            "\tmusic for: \(usage.musicStreamingTime) minutes\n" +
+            "\tconference for: \(usage.videoConferencingTime) minutes\n" +
+            "\tSocial Media for: \(usage.soMeTime) minutes\n" +
+            "On: \(usage.date)"
     }
     
     // Function used to get the correct location on the operating system
