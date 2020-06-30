@@ -11,22 +11,15 @@ import UIKit
 class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var helperTextView: UITextView!
-    
     @IBOutlet weak var picker: UIPickerView!
-    
     @IBOutlet weak var hoursField: UITextField!
-    
     @IBOutlet weak var minutesField: UITextField!
-    
     @IBOutlet weak var resultField: UITextView!
     
     var pickerData: [String] = [String]()
-    
     var soMePlatforms = ["Facebook", "SnapChat", "Instagram"]
     var videoConferencePlatforms = ["Skype", "Teams", "Zoom", "Hangout"]
-    
     var vc = ViewController()
-    
     var calculator = Calculator.calculator
     
     override func viewDidLoad() {
@@ -39,8 +32,6 @@ class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         pickerData = ["Facebook", "SnapChat", "Instagram", "Skype", "Teams", "Zoom", "Hangout"]
         
         helperTextView.text = "Choose your service(s) and add time spent in the last week."
-        
-        
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
@@ -57,7 +48,6 @@ class GeneralViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
         hoursField.resignFirstResponder()
         minutesField.resignFirstResponder()
-        
     }
     
     // Number of columns of data

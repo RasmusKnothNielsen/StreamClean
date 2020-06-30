@@ -11,22 +11,15 @@ import UIKit
 class MusicViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var helperTextView: UITextView!
-    
     @IBOutlet weak var musicServicePicker: UIPickerView!
-    
     @IBOutlet weak var hoursField: UITextField!
-    
     @IBOutlet weak var minutesField: UITextField!
-    
     @IBOutlet weak var resultField: UITextView!
     
     var pickerData: [String] = [String]()
-    
     var vc = ViewController()
-    
     var calculator = Calculator.calculator
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,14 +33,11 @@ class MusicViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
     }
     
-
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        
         let usage = vc.validateUserInput(picker: musicServicePicker, pickerData: pickerData, hours: hoursField, result: resultField, minutes: minutesField)
         calculator.addMusic(usage: usage)
         hoursField.resignFirstResponder()
         minutesField.resignFirstResponder()
-        
     }
     
     // Number of columns of data

@@ -17,9 +17,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var calculator = Calculator.calculator
-    
     let firebaseCRUD = FirebaseCRUD()
-    
     let auth = Auth.auth()
     
     override func viewDidLoad() {
@@ -33,25 +31,15 @@ class ResultViewController: UIViewController {
         let usage = Usage(calculator: calculator)
         // If user is logged in
         let authenticated = self.auth.currentUser?.uid
-        var userUID = ""
+        var userUID = "John Doe"
         // Check if the user is logged in, and set userUID accordingly
         if authenticated != nil {
             userUID = self.auth.currentUser!.uid
         }
-        // If user is not logged in, save the usage anyway for analyzing purposes
-        else {
-            userUID = "John Doe"
-
-        }
+        
         // Save the usage to Firebase
         firebaseCRUD.createDocument(userUID: userUID, usage: usage)
         // Get the average of the users usage, and display it
         calculator.getAverageOfDocuments(userUID: userUID, vc: self)
-        
-        
-        
-        
     }
-
-
 }

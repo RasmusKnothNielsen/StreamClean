@@ -12,19 +12,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     @IBOutlet weak var helperTextView: UITextView!
-    
     @IBOutlet weak var picker: UIPickerView!
-    
     @IBOutlet weak var hoursField: UITextField!
-    
     @IBOutlet weak var minutesField: UITextField!
-    
     @IBOutlet weak var resultField: UITextView!
-
-    var calculator = Calculator.calculator
     
+    var calculator = Calculator.calculator
     var pickerData: [String] = [String]()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +27,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.picker.delegate = self
         self.picker.dataSource = self
 
-        
         // Populate the picker
         pickerData = ["Netflix", "HBO", "Amazon Prime", "Hulu", "DR TV", "Other"]
         
