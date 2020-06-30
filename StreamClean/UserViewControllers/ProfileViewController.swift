@@ -28,6 +28,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         firebaseCRUD.loadUsersDocumentsInTableView(userUID: auth.currentUser!.uid, viewController: self)
+        
         usernameLabel.text = auth.currentUser?.email
         
         // Set these two to self, so the tableview references the app itself
@@ -53,13 +54,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         // sort the usages by date so that the tableview will show usages in the right order, from newest to oldest
         usages = usages.sorted() { $0.date > $1.date }
         
-        // Assign string from textArray to the cell
+        // Format the date to be easier to read.
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = DateFormatter.Style.none
         dateFormatter.dateStyle = DateFormatter.Style.medium
-
         let formattedDate = dateFormatter.string(from: usages[indexPath.row].date)
-        //let dateOfUsage = "\(usages[indexPath.row].date)"
         
         cell?.textLabel?.text = formattedDate
         // return the cell, and unwrap it with the !, since it is an Optional
