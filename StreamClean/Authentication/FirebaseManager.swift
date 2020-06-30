@@ -38,7 +38,6 @@ class FirebaseManager {
                 print("Error encountered while signing in")
                 print(error.debugDescription)
             }
-            
         }
     }
     
@@ -61,9 +60,6 @@ class FirebaseManager {
         auth.createUser(withEmail: email, password: password) { (result, error) in
             if error == nil {   // No error encountered during sign up
                 print("Successfully logged in to Firebase! \(result.debugDescription)")
-                
-                // TODO: Add username to current user
-                
                 signedUp = true
             }
             else {

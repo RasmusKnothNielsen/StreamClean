@@ -62,10 +62,6 @@ class FirebaseCRUD {
                     // Create Usage object
                     let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime, date: RequestedDate)
                     
-                    // DEBUG
-                    print("DocumentID: \(documentUID)")
-                    print("\tVideo streaming time: \(videoStreamingTime)")
-                    print("\tMusic streaming time: \(musicStreamingTime)")
                     
                     // Append to array
                     data.append(usage)
@@ -75,7 +71,7 @@ class FirebaseCRUD {
         return data
     }
     
-    // Read all documents from users collection
+    // Read all documents from users collection and add them to the tableview in ProfileViewController
     func loadUsersDocumentsInTableView(userUID: String, viewController: ProfileViewController) {
         // Initialize Usage array to be appended to
         FirebaseCRUD.db.collection(userUID).getDocuments { (querySnapshot, err) in
@@ -99,19 +95,10 @@ class FirebaseCRUD {
                     // Create Usage object
                     let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime, date: RequestedDate)
                     
-                    // DEBUG
-                    print("DocumentID: \(documentUID)")
-                    print("\tVideo streaming time: \(videoStreamingTime)")
-                    print("\tMusic streaming time: \(musicStreamingTime)")
-                    
                     // Append to array
                     viewController.usages.append(usage)
-                    print("From inside the snapshot:")
-                    print(viewController.usages)
                 }
             }
-            print("Usages from firebaseCRUD:")
-            print(viewController.usages)
             viewController.tableView.reloadData()
         }
     }

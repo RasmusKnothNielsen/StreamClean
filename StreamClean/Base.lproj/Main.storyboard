@@ -200,17 +200,11 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tom@email.com" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FSq-xs-6dn">
                                 <rect key="frame" x="52" y="187" width="310" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="kJ6-os-Ek8"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345678" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ESI-3K-AMc">
                                 <rect key="frame" x="52" y="244" width="310" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="ycF-Um-zxg"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
@@ -219,16 +213,6 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signInButtonPressed:" destination="XAq-mx-YR8" eventType="touchUpInside" id="71e-jH-pKq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLn-zR-d4E">
-                                <rect key="frame" x="127" y="375" width="160" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Login with Facebook">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="signInFacebookButtonPressed:" destination="XAq-mx-YR8" eventType="touchUpInside" id="xCN-6Z-H7w"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdm-YI-eEz">
@@ -245,25 +229,35 @@
                                     <segue destination="si9-Jn-P58" kind="show" id="9YA-IT-q6G"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLn-zR-d4E">
+                                <rect key="frame" x="102" y="373" width="210" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInFacebookButtonPressed:" destination="XAq-mx-YR8" eventType="touchUpInside" id="xCN-6Z-H7w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="VLn-zR-d4E" firstAttribute="leading" secondItem="7UY-xv-NTf" secondAttribute="leading" constant="127" id="0DZ-NG-FaM"/>
-                            <constraint firstItem="FSq-xs-6dn" firstAttribute="trailing" secondItem="ESI-3K-AMc" secondAttribute="trailing" id="FJW-fs-iRW"/>
-                            <constraint firstItem="Rdm-YI-eEz" firstAttribute="leading" secondItem="7UY-xv-NTf" secondAttribute="leading" constant="48" id="Fta-Vb-JW6"/>
-                            <constraint firstItem="ESI-3K-AMc" firstAttribute="centerX" secondItem="VLn-zR-d4E" secondAttribute="centerX" id="GYG-hx-mxT"/>
-                            <constraint firstItem="Rdm-YI-eEz" firstAttribute="baseline" secondItem="MsF-hQ-eTQ" secondAttribute="baseline" id="H2l-yq-W9c"/>
-                            <constraint firstItem="FSq-xs-6dn" firstAttribute="top" secondItem="7UY-xv-NTf" secondAttribute="top" constant="99" id="JBD-Gj-eJz"/>
-                            <constraint firstItem="f38-Mo-sRg" firstAttribute="top" secondItem="VLn-zR-d4E" secondAttribute="bottom" constant="51" id="JJq-EH-iO3"/>
-                            <constraint firstItem="FSq-xs-6dn" firstAttribute="leading" secondItem="ESI-3K-AMc" secondAttribute="leading" id="Rae-LY-a8s"/>
-                            <constraint firstItem="FSq-xs-6dn" firstAttribute="leading" secondItem="7UY-xv-NTf" secondAttribute="leading" constant="52" id="UHh-bL-uZV"/>
-                            <constraint firstItem="FSq-xs-6dn" firstAttribute="centerX" secondItem="Soh-YO-SXE" secondAttribute="centerX" id="YE3-Lb-rmE"/>
-                            <constraint firstItem="7UY-xv-NTf" firstAttribute="trailing" secondItem="MsF-hQ-eTQ" secondAttribute="trailing" constant="51" id="akv-gK-55b"/>
-                            <constraint firstItem="f38-Mo-sRg" firstAttribute="leading" secondItem="7UY-xv-NTf" secondAttribute="leading" constant="78" id="bq3-v2-r4D"/>
-                            <constraint firstItem="VLn-zR-d4E" firstAttribute="top" secondItem="ESI-3K-AMc" secondAttribute="bottom" constant="97" id="jI9-y3-OEM"/>
-                            <constraint firstItem="ESI-3K-AMc" firstAttribute="top" secondItem="FSq-xs-6dn" secondAttribute="bottom" constant="23" id="oNn-pN-ymX"/>
-                            <constraint firstItem="f38-Mo-sRg" firstAttribute="centerX" secondItem="VLn-zR-d4E" secondAttribute="centerX" id="pZX-nL-ncw"/>
-                            <constraint firstItem="Rdm-YI-eEz" firstAttribute="top" secondItem="ESI-3K-AMc" secondAttribute="bottom" constant="15" id="xF0-M9-lUz"/>
+                            <constraint firstItem="ESI-3K-AMc" firstAttribute="top" secondItem="FSq-xs-6dn" secondAttribute="bottom" constant="23" id="0Dy-Tq-JnA"/>
+                            <constraint firstItem="FSq-xs-6dn" firstAttribute="centerX" secondItem="Soh-YO-SXE" secondAttribute="centerX" id="0Kf-qr-Srn"/>
+                            <constraint firstItem="ESI-3K-AMc" firstAttribute="centerX" secondItem="VLn-zR-d4E" secondAttribute="centerX" id="3oz-Fx-8ja"/>
+                            <constraint firstItem="FSq-xs-6dn" firstAttribute="leading" secondItem="7UY-xv-NTf" secondAttribute="leading" constant="52" id="Kk8-bI-Ah7"/>
+                            <constraint firstItem="VLn-zR-d4E" firstAttribute="centerX" secondItem="f38-Mo-sRg" secondAttribute="centerX" id="NHg-Bf-iIW"/>
+                            <constraint firstItem="FSq-xs-6dn" firstAttribute="leading" secondItem="ESI-3K-AMc" secondAttribute="leading" id="PuB-qs-oAr"/>
+                            <constraint firstItem="Rdm-YI-eEz" firstAttribute="baseline" secondItem="MsF-hQ-eTQ" secondAttribute="baseline" id="UhT-fK-arS"/>
+                            <constraint firstItem="VLn-zR-d4E" firstAttribute="top" secondItem="ESI-3K-AMc" secondAttribute="bottom" constant="95" id="VSe-wP-zU8"/>
+                            <constraint firstItem="Rdm-YI-eEz" firstAttribute="top" secondItem="ESI-3K-AMc" secondAttribute="bottom" constant="15" id="Zjp-c3-9MS"/>
+                            <constraint firstItem="f38-Mo-sRg" firstAttribute="top" secondItem="VLn-zR-d4E" secondAttribute="bottom" constant="53" id="daH-DC-FcJ"/>
+                            <constraint firstItem="FSq-xs-6dn" firstAttribute="top" secondItem="7UY-xv-NTf" secondAttribute="top" constant="99" id="ePK-Dz-OeT"/>
+                            <constraint firstItem="Rdm-YI-eEz" firstAttribute="leading" secondItem="7UY-xv-NTf" secondAttribute="leading" constant="48" id="hZe-pL-x3Z"/>
+                            <constraint firstItem="FSq-xs-6dn" firstAttribute="trailing" secondItem="ESI-3K-AMc" secondAttribute="trailing" id="sGr-XL-Dez"/>
+                            <constraint firstItem="VLn-zR-d4E" firstAttribute="leading" secondItem="7UY-xv-NTf" secondAttribute="leading" constant="102" id="uGZ-rl-zfv"/>
+                            <constraint firstItem="f38-Mo-sRg" firstAttribute="leading" secondItem="7UY-xv-NTf" secondAttribute="leading" constant="78" id="xkR-cd-fif"/>
+                            <constraint firstItem="7UY-xv-NTf" firstAttribute="trailing" secondItem="MsF-hQ-eTQ" secondAttribute="trailing" constant="51" id="yZC-Ph-yng"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7UY-xv-NTf"/>
                     </view>
@@ -277,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUX-5P-pA0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040.5797101449275" y="1022.5446428571428"/>
+            <point key="canvasLocation" x="1039.1304347826087" y="1022.5446428571428"/>
         </scene>
         <!--Create Account-->
         <scene sceneID="rQj-7x-Kh4">
