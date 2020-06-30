@@ -87,7 +87,7 @@ class Calculator {
                 //let date = map["date"] as! Date
                 
                 // Create Usage object
-                let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime)
+                let usage = Usage(documentID: documentUID, videoStreamingTime: videoStreamingTime, musicStreamingTime: musicStreamingTime, videoConferenceTime: videoConferenceTime, soMeTime: soMeTime, date: Date())
                 
                 let calc = Calculator.init(usage: usage)
                 let result = calc.getSum()

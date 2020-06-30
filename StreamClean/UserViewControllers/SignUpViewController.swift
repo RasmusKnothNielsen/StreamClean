@@ -12,17 +12,11 @@ import FirebaseAuth
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var helperTextView: UITextView!
-    
     @IBOutlet weak var userNameTextField: UITextField!
-    
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var repeatPasswordTextField: UITextField!
-    
     @IBOutlet weak var resultTextView: UITextView!
-    
     
     var firebaseManager:FirebaseManager?
     
@@ -30,12 +24,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         firebaseManager = FirebaseManager(parentVC: self)   // Enable firebaseManager to update GUI
-        
         helperTextView.text = "Please provide username, email and password to create a new user."
-
-        
     }
 
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
@@ -56,15 +46,11 @@ class SignUpViewController: UIViewController {
                 if firebaseManager!.validateEmail(candidate: email) && firebaseManager!.validatePassword(password: password){
                     
                     // If email and password is present, try to sign up.
-                    let signedUp = firebaseManager!.signUp(username: username, email: email, password: password)
+                    firebaseManager!.signUp(username: username, email: email, password: password)
                 
-                    
                     let userUID = firebaseManager!.auth.currentUser?.uid
                     resultTextView.text = "User successfully created!"
                     print("User created: \n\tUsername: \(username)\n\tEmail: \(email)\n\tUID: \(userUID ?? "none")")
-                        
-                    
-                    
                 }
                 else {
                     resultTextView.text = "Email must be valid and password must be 8 characters or longer"

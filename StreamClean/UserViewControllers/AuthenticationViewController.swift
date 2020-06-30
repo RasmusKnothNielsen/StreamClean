@@ -28,8 +28,6 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
         firebaseManager = FirebaseManager(parentVC: self)   // Enable firebaseManager to update GUI
         facebookManager = FacebookManager(parentVC: self);  // Enable Facebook to update GUI
-        
-        // If user is logged in, alter name and function of sign in button to sign out button
     }
     
 
@@ -62,24 +60,4 @@ class AuthenticationViewController: UIViewController {
           print ("Error signing out: %@", signOutError)
         }
     }
-    
-    // TODO: DEBUGGING AND TESTING
-    @IBAction func getAllDocumentsButtonPressed(_ sender: UIButton) {
-    
-        let firebaseCRUD = FirebaseCRUD()
-        
-        // If a user is logged in, get all the documents from that user
-        if let user = firebaseManager!.auth.currentUser?.uid {
-            print("UserID: \(user)")
-            // Create an async call, so we can get the documents back when they are done
-            let response = firebaseCRUD.readAllDocuments(userUID: user)
-        }
-        else {
-            // If a user is not logged in, get all "John Doe" documents
-            let response = firebaseCRUD.readAllDocuments(userUID: "John Doe")
-        }
-        
-        
-    }
-    
 }

@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firebaseCRUD.readAll(userUID: auth.currentUser!.uid, viewController: self)
+        firebaseCRUD.loadUsersDocumentsInTableView(userUID: auth.currentUser!.uid, viewController: self)
         usernameLabel.text = auth.currentUser?.email
         
         // Set these two to self, so the tableview references the app itself
@@ -36,14 +36,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         tableView.reloadData()
     }
-    
-
-    @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        print("Deleting")
-        firebaseCRUD.deleteDocument(userUID: auth.currentUser!.uid, documentUID: "Uc2kw7gc4fgv2t4SUCgR")
-        print("Deleted")
-    }
-    
     
     // Function that returns the number of Strings in the array
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,25 +65,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         // return the cell, and unwrap it with the !, since it is an Optional
         return cell!
     }
-    
-    /*
-    // This enables the transition from tableview to the view controller
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        currentUsage = usages[indexPath.row]
-        rowThatIsBeingEdited = indexPath.row
-        print("Taking the didDeselectRowAt method")
-        populateUsageTextView(usage: currentUsage)
-        //performSegue(withIdentifier: "showUsageDetail", sender: self)
-    }
- */
-    
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewController = segue.destination as? UsageDetailsViewController {
-            viewController.textView.text = currentUsage.documentUID
-        }
-    }
- */
  
     
     // EDIT
@@ -129,18 +102,16 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         print(usages)
         self.tableView.deleteRows(at: [indexPath], with: .automatic)
         self.tableView.reloadData()
-        //self.tableView.deleteRows(at: [indexPath], with: .automatic)
-        //self.tableView.reloadData()
  
       }
     }
     
     func populateUsageTextView(usage: Usage) {
         usageTextView.text =
-            "You have Streamed \n\tvideo for: \(usage.videoStreamingTime) minutes\n" +
-            "\tmusic for: \(usage.musicStreamingTime) minutes\n" +
-            "\tconference for: \(usage.videoConferencingTime) minutes\n" +
-            "\tSocial Media for: \(usage.soMeTime) minutes\n\n" +
+            "You have Streamed \n\tVideo for: \(usage.videoStreamingTime / 60) hours and \(usage.videoStreamingTime % 60) minutes\n" +
+            "\tMusic for: \(usage.musicStreamingTime / 60) hours and \(usage.musicStreamingTime % 60) minutes\n" +
+            "\tConference for: \(usage.videoConferencingTime / 60) hours and \(usage.videoConferencingTime % 60) minutes\n" +
+            "\tSocial Media for: \(usage.soMeTime / 60) hours and \(usage.soMeTime % 60) minutes\n\n" +
             "Which is equal to: \(Calculator(usage: usage).getSum()) km\ndriven in a newer diesel car."
     }
     
