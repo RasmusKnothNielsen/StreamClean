@@ -145,12 +145,14 @@ class FirebaseCRUD {
     // Delete specific document in users collection
     func deleteDocument(userUID: String, documentUID: String) {
         FirebaseCRUD.db.collection(userUID).document(documentUID).delete() { err in
+            print("Hej der")
             if let err = err {
                 print("Error: \(err.localizedDescription) occured when trying to delete document: \(documentUID) in collection: \(userUID)")
             } else {
                 print("\(documentUID) successfully deleted from collection: \(userUID)")
             }
         }
+        print("Goddag")
     }
     
     // Delete all documents in users collection and thus deleting the whole collection
